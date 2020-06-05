@@ -11,3 +11,8 @@
 div.col.m6.l6.s12{
     padding-top: 15px;
 }
+
+.top-border {
+    border-top: blue solid 3px;
+    padding-top: 25px;
+}
