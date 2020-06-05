@@ -7,3 +7,7 @@
   main {
     flex: 1 0 auto;
   }
+
+div.col.m6.l6.s12{
+    padding-top: 15px;
+}
