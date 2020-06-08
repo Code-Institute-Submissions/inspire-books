@@ -16,3 +16,13 @@ div.col.m6.l6.s12{
     border-top: blue solid 3px;
     padding-top: 25px;
 }
+
+/*------Books-------*/
+
+div.col.s6.m4.l4{
+    padding-top: 25px;
+}
+
+.left-pad{
+    padding-left: 15px;
+}
