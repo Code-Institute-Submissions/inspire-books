@@ -26,3 +26,22 @@ div.col.s6.m4.l4{
 .left-pad{
     padding-left: 15px;
 }
+
+/*------Book_profile-------*/
+
+#pad-center {
+    padding: 15px;
+}
+
+/*---Image changes-----*/
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.s-img {
+    width: 50%;				
+    height: auto;
+}
