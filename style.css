@@ -17,6 +17,15 @@ div.col.m6.l6.s12{
     padding-top: 25px;
 }
 
+.container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+nav .brand-logo.right {
+    margin-right: 15px;
+}
+
 /*------Books-------*/
 
 div.col.s6.m4.l4{
@@ -44,4 +53,21 @@ div.col.s6.m4.l4{
 .s-img {
     width: 50%;				
     height: auto;
+}
+
+/*---Submission-----*/
+
+.btn, 
+.btn-large, 
+.btn-small, 
+.btn-flat {
+    margin: 10px;
+}
+
+button, 
+input, 
+optgroup, 
+select, 
+textarea {
+    margin: 10px;
 }

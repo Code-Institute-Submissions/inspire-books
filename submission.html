@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" href="style.css">
+	<title>Document</title>
+</head>
+
+<body>
+	<nav>
+		<div class="nav-wrapper navbar-fixed white z-depth-3">
+			<a href="#!" class="brand-logo right blue-text text-darken-2">Inspire</a>
+			<a href="#" data-target="mobile-demo"
+				class="sidenav-trigger blue-text text-darken-2"><i class="material-icons">menu</i></a>
+			<ul class="left hide-on-med-and-down ">
+				<li><a class="blue-text text-darken-2" href="sass.html">Home</a></li>
+				<li><a class="blue-text text-darken-2" href="badges.html">People</a></li>
+				<li><a class="blue-text text-darken-2" href="collapsible.html">Books</a></li>
+				<li><a class="blue-text text-darken-2" href="mobile.html">Search</a></li>
+                <li><a class="blue-text text-darken-2" href="mobile.html">Blog</a></li>
+			</ul>
+		</div>
+	</nav>
+	<ul class="sidenav" id="mobile-demo">
+		<li><a href="sass.html">Home</a></li>
+		<li><a href="badges.html">People</a></li>
+		<li><a href="collapsible.html">Books</a></li>
+		<li><a href="mobile.html">Search</a></li>
+        <li><a href="mobile.html">Blog</a></li>
+	</ul>
+
+	<main class="container">
+
+            <form id="fomr1">
+			<div class="row">
+                <div class="col12 ">                    
+                    <h5 class="blue-text text-darken-2">Book Title</h5>                    
+                </div>
+                <div class="col12">                    
+                    <input type="text" placeholder="Book Title">
+                </div>
+
+                <div class="col12">                    
+                    <h5 class="blue-text text-darken-2">Book Cover</h5>                    
+                </div>
+                <div class="col12">
+                   <form action="upload.php" method="post" enctype="multipart/form-data">
+                        <p class="blue-text text-darken-3">Select Cover image to upload:</p><br>
+                        <input type="file" name="fileToUpload" id="fileToUpload" class="blue-text text-darken-3">
+                        <input class="waves-effect waves-light btn-small blue darken-3" type="submit" value="Upload Image" name="submit">
+                    </form>
+                </div>
+
+                <div class="col12">                    
+                    <h5 class="blue-text text-darken-2 col12">Link to Buy</h5>                    
+                </div>
+                <div class="col12">                    
+                    <input type="url" placeholder="Amazon Link">
+                </div>
+
+                <div class="col12">                    
+                    <h5 class="blue-text text-darken-2">Inspiring Person</h5>                    
+                </div>
+                <div class="col12">                    
+                    <input type="text" placeholder="Add Person's Name" class="col  m6 l6 s12">
+                    <input type="text" placeholder="Add Person's Industry" class="col  m6 l6 s12"><!--To Be changed to dropdown-->
+                    <p class="blue-text text-darken-3">Date of Birth</p>
+                    <input type="date" placeholder="Add Person's D.O.B" class="col12">
+                    
+                </div>
+
+                <div class="col12">                    
+                    <h5 class="blue-text text-darken-2">Book Synopsis</h5>                    
+                </div>
+                <div class="col12">                    
+                    <div class="row">
+                        <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                            <label for="textarea1">Add book synopsis here</label>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col6">                    
+                    <h5 class="blue-text text-darken-2">Category</h5><!--To Be changed to dropdown-->                    
+                </div>
+                <div class="col6">                    
+                    <input type="text" placeholder="Book Category">
+                </div>
+            </div>                         
+            </form>
+
+            <div class="col12">
+            <button class="btn waves-effect waves-light blue darken-3 center" type="submit" form="form1" value="Submit">Submit</button>
+            </div>
+            
+            
+	</main>
+
+	<footer class="page-footer white z-depth-3">
+		<div class="container ">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="blue-text text-darken-2">Contact Us</h5>
+					<p class="blue-text text-darken-2">hi@inspire-reading.com</p>
+                    <h5 class="blue-text text-darken-2">Submit a Person of interest</h5>
+                    <p><a class="blue-text text-darken-2" href="#!">Add to collection</a></p>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<h5 class="blue-text text-darken-2">Links</h5>
+					<ul>
+						<li><a class="blue-text text-darken-2" href="#!">Home</a></li>
+						<li><a class="blue-text text-darken-2" href="#!">Books</a></li>
+						<li><a class="blue-text text-darken-2" href="#!">People</a></li>
+						<li><a class="blue-text text-darken-2" href="#!">Blog</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				<a class="white-text text-lighten-4 right" href="#!">Copyright</a>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
