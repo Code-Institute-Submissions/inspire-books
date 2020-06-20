@@ -10,9 +10,9 @@ app.config["MONGO_URI"] = 'mongodb+srv://root:r00tUser@myfirstcluster-sknof.mong
 mongo = PyMongo(app)
 
 @app.route('/')
-@app.route('/get_base')
-def get_base():
-    return render_template("base.html", base=mongo.db.book_title.find()) #change later to appropiate mongo file
+@app.route('/get_books')
+def get_books():
+    return render_template("books.html", books=mongo.db.book_title.find()) #change later to appropiate mongo file
 
 
 if __name__ == '__main__':
