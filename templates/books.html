@@ -1,129 +1,54 @@
-{% extends 'base.html' %}
-{% block content %}
-{% for book in books %}
+{% extends 'base.html' %} {% block content %} 
+
+
+
 <main class="container">
 
-	<div class="row ">
-		<div class="col  l9 m12 s12 blue-text darken-3">
-			<div class="row">
-				<div class="col s6 m4 l4">
-					<img class="responsive-img z-depth-3" src="the_eye1.png">
-					<h5>{{book.book_title}}</h5>
-					<h6>Recommended By {{book.inspire_person}}</h6>
-				</div>
-				<div class="col s6 m4 l4">
-					<img class="responsive-img z-depth-3" src="the_eye1.png">
-					<h5>{{book.book_title}}</h5>
-					<h6>Recommended By {{book.inspire_person}}</h6>
-				</div>
-				<div class="col s6 m4 l4">
-					<img class="responsive-img z-depth-3" src="the_eye1.png">
-					<h5>{{book.book_title}}</h5>
-					<h6>Recommended By {{book.inspire_person}}</h6>
-				</div>
-				<div class="col s6 m4 l4">
-					<img class="responsive-img z-depth-3" src="the_eye1.png">
-					<h5>{{book.book_title}}</h5>
-					<h6>Recommended By {{book.inspire_person}}</h6>
-				</div>
-				<div class="col s6 m4 l4">
-					<img class="responsive-img z-depth-3" src="the_eye1.png">
-					<h5>{{book.book_title}}</h5>
-					<h6>Recommended By {{book.inspire_person}}</h6>
-				</div>
-				<div class="col s6 m4 l4">
-					<img class="responsive-img z-depth-3" src="the_eye1.png">
-					<h5>{{book.book_title}}</h5>
-					<h6>Recommended By {{book.inspire_person}}</h6>
-				</div>
-			</div>
-		</div>
+  <div class="row">
+    <div class="col l9 m12 s12 blue-text darken-3">
+      <div class="row">
+        <div class="col s6 m4 l4">
+        {% for book in books %}
+          <img class="responsive-img z-depth-3" src="{{book.book_cover}}" width="75%"/>
+          <h5>{{book.book_title}}</h5>
+          <h6>Recommended By {{book.inspire_person}}</h6>
+        {% endfor %}  
+        </div>
+      </div>
+    </div>
 
-		<div class="col l3 m12 s12 blue-text darken-3 row">
-			<h4 class="col12 left-pad">Categories</h4>
-			<p class="col12 left-pad">Fiction</p>
-			<p class="col12 left-pad">Non-Fiction</p>
-			<p class="col12 left-pad">Fantasy</p>
-			<p class="col12 left-pad">Business</p>
-			<p class="col12 left-pad">Science Fiction</p>
-			<p class="col12 left-pad">History</p>
-			<p class="col12 left-pad">Health and Fitness</p>
-			<p class="col12 left-pad">Money & Investings</p>
-			<p class="col12 left-pad">Science & Nature</p>
-			<p class="col12 left-pad">Philosophy</p>
-			<p class="col12 left-pad">Biographies</p>
-		</div>
+<!-- Categories-->
+    <div class="col l3 m12 s12 blue-text darken-3 row">
+      <h4 class="col12 left-pad">Categories</h4>
+      {% for category in categories %}
+      <p class="col12 left-pad">{{category.category}}</p>
+      {% endfor %}
+    </div>
+  </div>
+<!--Featured-->
+  <h2 class="blue-text text-darken-4">Featured People</h2>
+  <div class="row top-border">
+    {% for inspire_person in inspire_person %}
+    <div class="col s6 m4 l2">
+      <img class="responsive-img z-depth-3" src="{{inspire_person.img}}" />
+      <h5>{{inspire_person.name}}</h5>
+      <h6>{{inspire_person.job}}</h6>
+    </div>
+    {% endfor %}
+  </div>
+<!--Featured-->
 
-	</div>
-	<h2 class="blue-text text-darken-4"> Featured People </h2>
-
-	<div class="row top-border">
-		<div class="col s6 m4 l2">
-			<img class="responsive-img z-depth-3" src="the_eye1.png">
-			<h5>Title</h5>
-			<h6>Recommended By . . .</h6>
-		</div>
-		<div class="col s6 m4 l2">
-			<img class="responsive-img z-depth-3" src="the_eye1.png">
-			<h5>Title</h5>
-			<h6>Recommended By . . .</h6>
-		</div>
-		<div class="col s6 m4 l2">
-			<img class="responsive-img z-depth-3" src="the_eye1.png">
-			<h5>Title</h5>
-			<h6>Recommended By . . .</h6>
-		</div>
-		<div class="col s6 m4 l2">
-			<img class="responsive-img z-depth-3" src="the_eye1.png">
-			<h5>Title</h5>
-			<h6>Recommended By . . .</h6>
-		</div>
-		<div class="col s6 m4 l2">
-			<img class="responsive-img z-depth-3" src="the_eye1.png">
-			<h5>Title</h5>
-			<h6>Recommended By . . .</h6>
-		</div>
-		<div class="col s6 m4 l2">
-			<img class="responsive-img z-depth-3" src="the_eye1.png">
-			<h5>Title</h5>
-			<h6>Recommended By . . .</h6>
-		</div>
-	</div>
-
-	<h2 class="blue-text text-darken-4"> Featured Books </h2>
-	<div class="row top-border">
-		<div class="col s6 m4 l2">
-			<img class="responsive-img z-depth-3" src="the_eye1.png">
-			<h5>Title</h5>
-			<h6>Recommended By . . .</h6>
-		</div>
-		<div class="col s6 m4 l2">
-			<img class="responsive-img z-depth-3" src="the_eye1.png">
-			<h5>Title</h5>
-			<h6>Recommended By . . .</h6>
-		</div>
-		<div class="col s6 m4 l2">
-			<img class="responsive-img z-depth-3" src="the_eye1.png">
-			<h5>Title</h5>
-			<h6>Recommended By . . .</h6>
-		</div>
-		<div class="col s6 m4 l2">
-			<img class="responsive-img z-depth-3" src="the_eye1.png">
-			<h5>Title</h5>
-			<h6>Recommended By . . .</h6>
-		</div>
-		<div class="col s6 m4 l2">
-			<img class="responsive-img z-depth-3" src="the_eye1.png">
-			<h5>Title</h5>
-			<h6>Recommended By . . .</h6>
-		</div>
-		<div class="col s6 m4 l2">
-			<img class="responsive-img z-depth-3" src="the_eye1.png">
-			<h5>Title</h5>
-			<h6>Recommended By . . .</h6>
-		</div>
-	</div>
-
+  <h2 class="blue-text text-darken-4">Featured Books</h2>
+  <div class="row top-border">
+    <div class="col s6 m4 l2">
+    {% for book in books %}
+      <img class="responsive-img z-depth-3" src="{{book.book_cover}}" />
+      <h5>{{book.book_title}}</h5>
+      <h6>Recommended By {{book.inspire_person}}</h6>
+    {% endfor %}
+    </div>
+  </div>
+  
 </main>
-{% endfor %}
+
 {% endblock %}
