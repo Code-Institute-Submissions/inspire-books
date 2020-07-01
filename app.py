@@ -10,13 +10,26 @@ app.config["MONGO_URI"] = 'mongodb+srv://root:r00tUser@myfirstcluster-sknof.mong
 mongo = PyMongo(app)
 
 @app.route('/')
+@app.route('/get_home')
+def get_home():
+    return render_template('home.html')
+
+
 @app.route('/get_books')
 def get_books():
     return render_template("books.html", 
-                            books=mongo.db.book_title.find(),
-                            categories=mongo.db.categories.find(),
+                           books=mongo.db.book_title.find(),
+                           categories=mongo.db.categories.find(),
                             inspire_person=mongo.db.inspire_person.find())
 
+
+@app.route('/get_people')
+def get_people():
+    return render_template('people.html')
+
+@app.route('/get_submission')
+def get_submission():
+    return render_template('submission.html')
 
 
 
