@@ -1,22 +1,22 @@
-{% extends 'base.html' %} {% block content %} 
-
+{% extends 'base.html' %} {% block content %}
 
 <main class="container">
-
   <div class="row">
     <div class="col l9 m12 s12 blue-text darken-3">
       <div class="row">
-        <div class="col s6 m4 l4">
         {% for book in books %}
-          <img class="responsive-img z-depth-3" src="{{book.book_cover}}" width="75%"/>
-          <h5>{{book.book_title}}</h5>
-          <h6>Recommended By {{book.inspire_person}}</h6>
-        {% endfor %}  
+        <div class="col s6 m4 l4">
+          <div class="">
+            <img class="responsive-img z-depth-3" src="{{book.book_cover}}" />
+            <h5>{{book.book_title}}</h5>
+            <h6>Recommended By {{book.inspire_person}}</h6>
+          </div>
         </div>
+        {% endfor %}
       </div>
     </div>
 
-<!-- Categories-->
+    <!-- Categories-->
     <div class="col l3 m12 s12 blue-text darken-3 row">
       <h4 class="col12 left-pad">Categories</h4>
       {% for category in categories %}
@@ -24,7 +24,7 @@
       {% endfor %}
     </div>
   </div>
-<!--Featured-->
+  <!--Featured-->
   <h2 class="blue-text text-darken-4">Featured People</h2>
   <div class="row top-border">
     {% for inspire_person in inspire_person %}
@@ -35,19 +35,6 @@
     </div>
     {% endfor %}
   </div>
-<!--Featured-->
-
-  <h2 class="blue-text text-darken-4">Featured Books</h2>
-  <div class="row top-border">
-    <div class="col s6 m4 l2">
-    {% for book in books %}
-      <img class="responsive-img z-depth-3" src="{{book.book_cover}}" />
-      <h5>{{book.book_title}}</h5>
-      <h6>Recommended By {{book.inspire_person}}</h6>
-    {% endfor %}
-    </div>
-  </div>
-  
 </main>
 
 {% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'books.html' %} {% block content_books %}
+{% for home in home %}
+    <div class="col s6 m4 l2">
+      <img class="responsive-img z-depth-3" src="{{home.book_cover}}" />
+      <h5>{{home.book_title}}</h5>
+      <h6>Recommended By {{home.inspire_person}}</h6>
+    </div>
+    {% endfor %}
+{% endblock %}
+
+<!--Featured people home page example-->
+<!--was thinking on seperating out templates for featured people as used twice-->
