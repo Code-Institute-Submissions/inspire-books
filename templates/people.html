@@ -4,6 +4,8 @@
   <div class="row">
     <div class="col l9 m12 s12 blue-text darken-3">
       <div class="row">
+      <!-- Modal Trigger -->
+      <a class="modal-trigger" href="#modal1">
         {% for inspire_person in inspire_person %}
         <div class="col s6 m4 l4">
           <div class="">
@@ -16,8 +18,21 @@
           </div>
         </div>
         {% endfor %}
+        </a>
       </div>
     </div>
+    <!-- Modal Structure 1 Inspiring person -->
+    <div id="modal1" class="modal">
+    <div class="modal-content">
+      <img class="responsive-img z-depth-3" src="#" />
+      <h5></h5>
+      <h6></h6>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+    </div>
+        <!--End Modal-->
 
     <div class="col l3 m12 s12 blue-text darken-3 row">
       <h4 class="col12 left-pad">Categories</h4>

@@ -31,11 +31,15 @@ def get_people():
                             books=mongo.db.book_title.find(),
                             inspire_person=mongo.db.inspire_person.find())
 
-@app.route('/get_featured_books')
-def get_featured_books():
-    return render_template('featured_books.html', 
-                            books=mongo.db.book_title.find())
 
+
+@app.route('/get_search')
+def get_search():
+    return render_template('search.html')
+
+@app.route('/get_blog')
+def get_blog():
+    return render_template('blog.html')
 
 
 @app.route('/get_submission')
