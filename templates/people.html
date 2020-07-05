@@ -4,24 +4,21 @@
   <div class="row">
     <div class="col l9 m12 s12 blue-text darken-3">
       <div class="row">
-      <!-- Modal Trigger -->
-      <a class="modal-trigger" href="#modal1">
+      <!-- Modal Trigger 
+      <a class="modal-trigger" href="#modal1">-->
         {% for inspire_person in inspire_person %}
-        <div class="col s6 m4 l4">
+        <div class="">
           <div class="">
-            <img
-              class="responsive-img z-depth-3"
-              src="{{inspire_person.img}}"
-            />
-            <h5>{{inspire_person.name}}</h5>
-            <h6>{{inspire_person.job}}</h6>
+            <img class="responsive-img z-depth-3 col12 center" src="{{inspire_person.img}}"/>
+            <h5 class="col12 center-align">{{inspire_person.name}}</h5>
+            <h6 class="col12 center-align">{{inspire_person.job}}</h6>
           </div>
         </div>
         {% endfor %}
         </a>
       </div>
     </div>
-    <!-- Modal Structure 1 Inspiring person -->
+    <!-- Modal Structure 1 Inspiring person 
     <div id="modal1" class="modal">
     <div class="modal-content">
       <img class="responsive-img z-depth-3" src="#" />
@@ -32,7 +29,7 @@
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
     </div>
-        <!--End Modal-->
+        End Modal-->
 
     <div class="col l3 m12 s12 blue-text darken-3 row">
       <h4 class="col12 left-pad">Categories</h4>
@@ -52,7 +49,7 @@
   </div>
 
   <h2 class="blue-text text-darken-4">Featured Books</h2>
-  <div class="row top-border">
+  <div class="row top-border ">
     {% for home in books %}
     <div class="col s6 m4 l2">
       <img class="responsive-img z-depth-3" src="{{home.book_cover}}" />
@@ -64,3 +61,11 @@
 </main>
 
 {% endblock %}
+
+
+<!--
+Forget doing modal pop up and may be do a pagination 1 person to page with necessary information and enable edditing 
+
+featured books could be carouselled - - needs figured as materialize isnt enabling this
+
+-->
