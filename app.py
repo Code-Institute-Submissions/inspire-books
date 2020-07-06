@@ -22,14 +22,14 @@ def get_books():
     return render_template("books.html",
                             books=mongo.db.book_title.find(),
                             categories=mongo.db.categories.find(),
-                            inspire_person=mongo.db.inspire_person.find())
+                            inspire_person=mongo.db.inspire_person.find().limit(6))
 
 
 @app.route('/get_people')
 def get_people():
     return render_template('people.html',
                             books=mongo.db.book_title.find().limit(0),
-                            inspire_person=mongo.db.inspire_person.find().limit(1))
+                            inspire_person=mongo.db.inspire_person.find())
 
 
 

@@ -1,71 +1,55 @@
 {% extends 'base.html' %} {% block content %}
 
 <main class="container">
-  <div class="row">
-    <div class="col l9 m12 s12 blue-text darken-3">
-      <div class="row">
-      <!-- Modal Trigger 
-      <a class="modal-trigger" href="#modal1">-->
-        {% for inspire_person in inspire_person %}
-        <div class="">
-          <div class="">
-            <img class="responsive-img z-depth-3 col12 center" src="{{inspire_person.img}}"/>
-            <h5 class="col12 center-align">{{inspire_person.name}}</h5>
-            <h6 class="col12 center-align">{{inspire_person.job}}</h6>
-          </div>
-        </div>
-        {% endfor %}
-        </a>
-      </div>
-    </div>
-    <!-- Modal Structure 1 Inspiring person 
-    <div id="modal1" class="modal">
-    <div class="modal-content">
-      <img class="responsive-img z-depth-3" src="#" />
-      <h5></h5>
-      <h6></h6>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-    </div>
-        End Modal-->
+	<div class="row">
+		<div class="col l9 m12 s12 blue-text darken-3">
+			<div class="row">
 
-    <div class="col l3 m12 s12 blue-text darken-3 row">
-      <h4 class="col12 left-pad">Categories</h4>
-      <p class="col12 left-pad">Sport</p>
-      <p class="col12 left-pad">Comedy</p>
-      <p class="col12 left-pad">Education</p>
-      <p class="col12 left-pad">Business</p>
-      <p class="col12 left-pad">Entertainment</p>
-      <p class="col12 left-pad">Entrepreneurship</p>
-      <p class="col12 left-pad">Film</p>
-      <p class="col12 left-pad">Journalism</p>
-      <p class="col12 left-pad">Marketing</p>
-      <p class="col12 left-pad">Media</p>
-      <p class="col12 left-pad">Music</p>
-      <p class="col12 left-pad">Tech</p>
-    </div>
-  </div>
+				{% for inspire_person in inspire_person %}
+				<div class="col s6 m4 l4">
+					
+						<img class="responsive-img z-depth-3" src="{{inspire_person.img}}"/>
+						<h5 class="center-align">{{inspire_person.name}}</h5>
+						<h6 class="center-align">{{inspire_person.job}}</h6>
+                        <p class="center-align">Born . . .</p>
+                        <p class="center-align"><a href="#">Books</a></p>
+					
+				</div>
+				{% endfor %}
 
-  <h2 class="blue-text text-darken-4">Featured Books</h2>
-  <div class="row top-border ">
-    {% for home in books %}
-    <div class="col s6 m4 l2">
-      <img class="responsive-img z-depth-3" src="{{home.book_cover}}" />
-      <h5>{{home.book_title}}</h5>
-      <h6>Recommended By {{home.inspire_person}}</h6>
-    </div>
-    {% endfor %}
-  </div>
+			</div>
+		</div>
+
+
+		<div class="col l3 m12 s12 blue-text darken-3 row">
+			<h4 class="col12 left-pad">Categories</h4>
+			<p class="col12 left-pad">Sport</p>
+			<p class="col12 left-pad">Comedy</p>
+			<p class="col12 left-pad">Education</p>
+			<p class="col12 left-pad">Business</p>
+			<p class="col12 left-pad">Entertainment</p>
+			<p class="col12 left-pad">Entrepreneurship</p>
+			<p class="col12 left-pad">Film</p>
+			<p class="col12 left-pad">Journalism</p>
+			<p class="col12 left-pad">Marketing</p>
+			<p class="col12 left-pad">Media</p>
+			<p class="col12 left-pad">Music</p>
+			<p class="col12 left-pad">Tech</p>
+            
+		</div>
+        
+	</div>
+
+	<h2 class="blue-text text-darken-4">Featured Books</h2>
+	<div class="row top-border ">
+		{% for home in books %}
+		<div class="col s6 m4 l2">
+			<img class="responsive-img z-depth-3" src="{{home.book_cover}}" />
+			<h5>{{home.book_title}}</h5>
+			<h6>Recommended By {{home.inspire_person}}</h6>
+		</div>
+		{% endfor %}
+	</div>
 </main>
 
 {% endblock %}
-
-
-<!--
-Forget doing modal pop up and may be do a pagination 1 person to page with necessary information and enable edditing 
-
-featured books could be carouselled - - needs figured as materialize isnt enabling this
-
--->
