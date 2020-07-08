@@ -20,23 +20,23 @@
 			</div>
 		</div>
 
-
-		<div class="col l3 m12 s12 blue-text darken-3 row">
-			<h4 class="col12 left-pad">Categories</h4>
-			<p class="col12 left-pad">Sport</p>
-			<p class="col12 left-pad">Comedy</p>
-			<p class="col12 left-pad">Education</p>
-			<p class="col12 left-pad">Business</p>
-			<p class="col12 left-pad">Entertainment</p>
-			<p class="col12 left-pad">Entrepreneurship</p>
-			<p class="col12 left-pad">Film</p>
-			<p class="col12 left-pad">Journalism</p>
-			<p class="col12 left-pad">Marketing</p>
-			<p class="col12 left-pad">Media</p>
-			<p class="col12 left-pad">Music</p>
-			<p class="col12 left-pad">Tech</p>
+        <!-- Work Categories-->
+            <div class="row">
+            <div class="col l3 m12 s12 blue-text darken-3">
+                <h4 class="col12 left-pad">Categories</h4>
+                {% for workcat in work_categories %}
+                <p class="col12 left-pad">{{workcat.work_cat}}</p>
+                {% endfor %}
+                <div class="row">
+                <div class="col12">
+                <input type="search" class="" placeholder="Search for Book Name"> <button id="search" class="btn waves-effect waves-light blue darken-4" type="submit" name="action">Search
+                    <i class="material-icons right">search</i>
+                    </button>
+                </div>
+            </div>
+            </div>
             
-		</div>
+            </div>
         
 	</div>
 

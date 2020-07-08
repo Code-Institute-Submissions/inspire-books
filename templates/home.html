@@ -22,9 +22,9 @@
     {% for inspire_person in inspire_person %}
     <div class="col s6 m4 l2">
         <div class="">
-        <img class="responsive-img z-depth-3" src="{{inspire_person.img}}" />
-        <h5>{{inspire_person.name}}</h5>
-        <h6>{{inspire_person.job}}</h6>
+        <a href="{{url_for('get_people')}}"><img class="responsive-img z-depth-3" src="{{inspire_person.img}}" /></a>
+        <h5 class="center-align">{{inspire_person.name}}</h5>
+        <h6 class="center-align">{{inspire_person.job}}</h6>
         </div>
     </div>
     {% endfor %}
@@ -34,9 +34,11 @@
   <div class="row top-border">
     {% for home in home %}
     <div class="col s6 m4 l2">
-      <img class="responsive-img z-depth-3" src="{{home.book_cover}}" />
-      <h5 >{{home.book_title}}</h5>
-      <h6>Recommended By {{home.inspire_person}}</h6>
+    <div class="">
+      <a href="{{url_for('get_books')}}"><img class="responsive-img z-depth-3" src="{{home.book_cover}}" /></a>
+      <h5 class="center-align">{{home.book_title}}</h5>
+      <h6 class="center-align">Recommended By {{home.inspire_person}}</h6>
+    </div>
     </div>
     {% endfor %}
   </div>
