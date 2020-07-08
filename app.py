@@ -44,8 +44,9 @@ def get_blog():
 
 @app.route('/get_submission')
 def get_submission():
-    return render_template('submission.html')
-
+    return render_template('submission.html',
+    categories=mongo.db.categories.find(),
+    work_categories=mongo.db.work_categories.find())
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

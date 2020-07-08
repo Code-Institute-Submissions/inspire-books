@@ -1,73 +1,118 @@
 {% extends 'base.html' %} {% block content %}
-
+<!--Book Input-->
 <main class="container">
-  <form id="fomr1">
+  <form id="form1" action="" method="POST" class="">
     <div class="row">
       <div class="col12">
         <h5 class="blue-text text-darken-2">Book Title</h5>
       </div>
       <div class="col12">
-        <input type="text" placeholder="Book Title" />
+        <input
+          id="book_title"
+          name="book_title"
+          type="text"
+          placeholder="Book Title"
+        />
       </div>
 
       <div class="col12">
         <h5 class="blue-text text-darken-2">Book Cover</h5>
       </div>
       <div class="col12">
-        <input type="text" placeholder="Link to Book cover image" />
+        <input
+          id="book_cover"
+          name="book_cover"
+          type="text"
+          placeholder="Link to Book cover image e.g. https://bit.ly/2Z7fwyI"
+        />
       </div>
 
       <div class="col12">
         <h5 class="blue-text text-darken-2 col12">Link to Buy</h5>
       </div>
       <div class="col12">
-        <input type="url" placeholder="Amazon Link" />
-      </div>
-
-      <div class="col12">
-        <h5 class="blue-text text-darken-2">Inspiring Person</h5>
-      </div>
-      <div class="col12">
         <input
-          type="text"
-          placeholder="Add Person's Name"
-          class="col m6 l6 s12"
+          id="book_link"
+          name="book_link"
+          type="url"
+          placeholder="Amazon Link"
         />
-        <input
-          type="text"
-          placeholder="Add Person's Industry"
-          class="col m6 l6 s12"
-        /><!--To Be changed to dropdown-->
-        <p class="blue-text text-darken-3">Date of Birth</p>
-        <input type="date" placeholder="Add Person's D.O.B" class="col12" />
-      </div>
-
-      <div class="col12">
-        <h5 class="blue-text text-darken-2">Book Synopsis</h5>
-      </div>
-      <div class="col12">
-        <div class="row">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s12">
-                <textarea
-                  id="textarea1"
-                  class="materialize-textarea"
-                ></textarea>
-                <label for="textarea1">Add book synopsis here</label>
-              </div>
-            </div>
-          </form>
-        </div>
       </div>
 
       <div class="col6">
-        <h5 class="blue-text text-darken-2">Category</h5>
+        <h5 class="blue-text text-darken-2">Book Category</h5>
         <!--To Be changed to dropdown-->
       </div>
-      <div class="col6">
-        <input type="text" placeholder="Book Category" />
-      </div>
+      <div class="col12">
+      <div class="row">
+      <div class="input-field col s12">
+            <select id="category" name="category">
+            <option value="" disabled selected>Choose Book Category</option>
+            {% for cat in categories %}
+                      <option value="{{cat.category}}">{{cat.category}}</option>
+                  {% endfor %}
+            </select>
+        </div>
+        </div>
+    </div>
+
+    <div class="col12">
+      <h5 class="blue-text text-darken-2">Book Synopsis</h5>
+    </div>
+    <div class="col12">
+      <textarea
+        id="synopsis"
+        name="synopsis"
+        cols="30"
+        rows="10"
+        class="materialize-textarea"
+      >
+      </textarea>
+    </div>
+
+    <!--Inspiring Person Input-->
+    <div class="col12">
+      <h5 class="blue-text text-darken-2">Inspiring Person</h5>
+    </div>
+    <div class="col12">
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Add Person's Name"
+        class=""
+      />
+      <!--To Be changed to dropdown-->
+        <div class="row">
+            <div class="input-field col s12">
+                <select id="work_cat" name="work_cat">
+                <option value="" disabled selected>Choose Person's Industry</option>
+                {% for workcat in work_categories %}
+                        <option value="{{workcat.work_cat}}">{{workcat.work_cat}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+    <div class="col m6 l6 s12">
+      <h5 class="blue-text text-darken-2">Profile Picture</h5>
+      <input
+        id="img"
+        name="img"
+        type="text"
+        placeholder="Link to Profile image e.g. https://bit.ly/2NBsAH2"
+      />
+    </div>
+
+    <div class="col m6 l6 s12">
+      <p class="blue-text text-darken-3">Date of Birth</p>
+      <input
+        type="date"
+        id="d.o.b"
+        name="d.o.b"
+        placeholder="Add Person's D.O.B"
+        class="col12 "
+      />
     </div>
   </form>
 
