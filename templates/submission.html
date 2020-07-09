@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <!--Book Input-->
 <main class="container">
-  <form id="form1" action="" method="POST" class="">
+  <form id="form1" action="{{url_for('insert_submission')}}" method="POST" class="">
     <div class="row">
       <div class="col12">
         <h5 class="blue-text text-darken-2">Book Title</h5>
@@ -94,7 +94,7 @@
             </div>
         </div>
 
-    <div class="col m6 l6 s12">
+    <div class="col12">
       <h5 class="blue-text text-darken-2">Profile Picture</h5>
       <input
         id="img"
@@ -103,8 +103,8 @@
         placeholder="Link to Profile image e.g. https://bit.ly/2NBsAH2"
       />
     </div>
-
-    <div class="col m6 l6 s12">
+   <!--
+    <div class="col12">
       <p class="blue-text text-darken-3">Date of Birth</p>
       <input
         type="date"
@@ -113,19 +113,25 @@
         placeholder="Add Person's D.O.B"
         class="col12 "
       />
-    </div>
-  </form>
-
-  <div class="col12">
-    <button
-      class="btn waves-effect waves-light blue darken-3 center"
+    </div>-->
+    <div class="col12 center-align">
+   <button
+      class="btn waves-effect waves-light blue darken-3"
       type="submit"
       form="form1"
       value="Submit"
     >
       Submit
     </button>
-  </div>
+
+    </div>
+
+
+  </form>
+
+  
+ 
+  
 </main>
 
 {% endblock %}

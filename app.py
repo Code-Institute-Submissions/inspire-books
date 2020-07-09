@@ -9,7 +9,6 @@ app.config["MONGO_URI"] = 'mongodb+srv://root:r00tUser@myfirstcluster-sknof.mong
 
 mongo = PyMongo(app)
 
-
 @app.route('/')
 @app.route('/get_home')
 def get_home():
@@ -24,15 +23,12 @@ def get_books():
                             categories=mongo.db.categories.find(),
                             inspire_person=mongo.db.inspire_person.find().limit(6))
 
-
 @app.route('/get_people')
 def get_people():
     return render_template('people.html',
                             books=mongo.db.book_title.find().limit(0),
                             inspire_person=mongo.db.inspire_person.find(),
                             work_categories=mongo.db.work_categories.find())
-
-
 
 @app.route('/get_search')
 def get_search():
@@ -48,6 +44,24 @@ def get_submission():
     return render_template('submission.html',
     categories=mongo.db.categories.find(),
     work_categories=mongo.db.work_categories.find())
+
+@app.route('/insert_submission', methods=['POST'])
+def insert_submission():
+        submission = mongo.db.book_title
+        submission.insert_one(request.form.to_dict())
+        return redirect(url_for('get_books'))
+        
+        submission1 = mongo.db.categories
+        submission1.insert_one(request.form.to_dict())
+        return redirect(url_for('get_books'))
+
+        submission2 = mongo.db.inspire_person
+        submission2.insert_one(request.form.to_dict())
+        return redirect(url_for('get_people'))
+
+        submission3 = mongo.db.work_categories
+        submission3.insert_one(request.form.to_dict())
+        return redirect(url_for('get_people'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
