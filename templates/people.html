@@ -14,7 +14,7 @@
 						<h6 class="center-align">{{book.work_cat}}</h6>
                         
                         <p class="center-align">Born {{book.born}}</p>
-                        <p class="center-align"><a href="#">Recommended {{book.book_title}}</a></p>
+                        <p class="center-align"><a href="{{url_for('get_books')}}">Recommended {{book.book_title}}</a></p>
 					
 				</div>
 				{% endfor %}
@@ -46,9 +46,9 @@
 	<div class="row top-border ">
 		{% for book in books_limit %}
 		<div class="col s6 m4 l2">
-			<img class="responsive-img z-depth-3" src="{{book.book_cover}}" />
-			<h5>{{book.book_title}}</h5>
-			<h6>Recommended By {{book.inspire_person}}</h6>
+			<a href="{{url_for('get_books')}}"><img class="responsive-img z-depth-3" src="{{book.book_cover}}" /></a>
+			<h5 class="blue-text darken-3 center-align">{{book.book_title}}</h5>
+			<h6 class="blue-text darken-3 center-align">Recommended By {{book.inspire_person}}</h6>
 		</div>
 		{% endfor %}
 	</div>

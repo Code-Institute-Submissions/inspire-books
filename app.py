@@ -14,7 +14,8 @@ mongo = PyMongo(app)
 def get_home():
     return render_template('home.html',
                             home=mongo.db.book_title.find().limit(6),
-                            inspire_person=mongo.db.inspire_person.find().limit(6))
+                            homes=mongo.db.book_title.find().limit(6))
+                            
 
 @app.route('/get_books')
 def get_books():
@@ -54,10 +55,6 @@ def insert_submission():
         submission1 = mongo.db.categories
         submission1.insert_one(request.form.to_dict())
         return redirect(url_for('get_books'))
-
-        submission2 = mongo.db.inspire_person
-        submission2.insert_one(request.form.to_dict())
-        return redirect(url_for('get_people'))
 
         submission3 = mongo.db.work_categories
         submission3.insert_one(request.form.to_dict())
