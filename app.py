@@ -13,22 +13,22 @@ mongo = PyMongo(app)
 @app.route('/get_home')
 def get_home():
     return render_template('home.html',
-                            home=mongo.db.book_title.find(),
-                            inspire_person=mongo.db.inspire_person.find())
+                            home=mongo.db.book_title.find().limit(6),
+                            inspire_person=mongo.db.inspire_person.find().limit(6))
 
 @app.route('/get_books')
 def get_books():
     return render_template("books.html",
                             books=mongo.db.book_title.find(),
                             categories=mongo.db.categories.find(),
-                            inspire_person=mongo.db.inspire_person.find().limit(6))
+                            books_limit=mongo.db.book_title.find().limit(6))
 
 @app.route('/get_people')
 def get_people():
     return render_template('people.html',
-                            books=mongo.db.book_title.find().limit(0),
-                            inspire_person=mongo.db.inspire_person.find(),
-                            work_categories=mongo.db.work_categories.find())
+                            books=mongo.db.book_title.find(),
+                            work_categories=mongo.db.work_categories.find(),
+                            books_limit=mongo.db.book_title.find().limit(6))
 
 @app.route('/get_search')
 def get_search():

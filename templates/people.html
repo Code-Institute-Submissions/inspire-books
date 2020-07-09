@@ -5,14 +5,16 @@
 		<div class="col l9 m12 s12 blue-text darken-3">
 			<div class="row">
 
-				{% for inspire_person in inspire_person %}
+				{% for book in books %}
 				<div class="col s6 m4 l4">
 					
-						<img class="responsive-img z-depth-3" src="{{inspire_person.img}}"/>
-						<h5 class="center-align">{{inspire_person.name}}</h5>
-						<h6 class="center-align">{{inspire_person.job}}</h6>
-                        <p class="center-align">Born . . .</p>
-                        <p class="center-align"><a href="#">Books</a></p>
+						<img class="responsive-img z-depth-3" src="{{book.img}}"/>
+						<h5 class="center-align">{{book.inspire_person}}</h5>
+                        
+						<h6 class="center-align">{{book.work_cat}}</h6>
+                        
+                        <p class="center-align">Born {{book.born}}</p>
+                        <p class="center-align"><a href="#">Recommended {{book.book_title}}</a></p>
 					
 				</div>
 				{% endfor %}
@@ -39,14 +41,14 @@
             </div>
         
 	</div>
-
+    
 	<h2 class="blue-text text-darken-4">Featured Books</h2>
 	<div class="row top-border ">
-		{% for home in books %}
+		{% for book in books_limit %}
 		<div class="col s6 m4 l2">
-			<img class="responsive-img z-depth-3" src="{{home.book_cover}}" />
-			<h5>{{home.book_title}}</h5>
-			<h6>Recommended By {{home.inspire_person}}</h6>
+			<img class="responsive-img z-depth-3" src="{{book.book_cover}}" />
+			<h5>{{book.book_title}}</h5>
+			<h6>Recommended By {{book.inspire_person}}</h6>
 		</div>
 		{% endfor %}
 	</div>

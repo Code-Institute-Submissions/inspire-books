@@ -10,6 +10,7 @@
 					
 						<img class="responsive-img z-depth-3 center" src="{{book.book_cover}}" width="350"/>
 						<h5 class="center-align">{{book.book_title}}</h5>
+                        <h6 class="center-align">by {{book.author}}</h6>
 						<h6 class="center-align">Recommended By {{book.inspire_person}}</h6>
                         <ul class="collapsible">
                         <li>
@@ -54,11 +55,11 @@
 	<!--Featured-->
 	<h2 class="blue-text text-darken-4">Featured People</h2>
 	<div class="row top-border">
-		{% for inspire_person in inspire_person %}
+		{% for book in books_limit %}
 		<div class="col s6 m4 l2">
-			<img class="responsive-img z-depth-3" src="{{inspire_person.img}}" />
-			<h5>{{inspire_person.name}}</h5>
-			<h6>{{inspire_person.job}}</h6>
+			<img class="responsive-img z-depth-3" src="{{book.img}}" />
+			<h5>{{book.inspire_person}}</h5>
+			<h6>{{book.work_cat}}</h6>
 		</div>
 		{% endfor %}
 	</div>
