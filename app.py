@@ -31,6 +31,9 @@ def get_people():
                             work_categories=mongo.db.work_categories.find(),
                             books_limit=mongo.db.book_title.find().limit(6))
 
+
+
+
 @app.route('/get_search')
 def get_search():
     return render_template('search.html')
@@ -45,6 +48,13 @@ def get_submission():
     return render_template('submission.html',
     categories=mongo.db.categories.find(),
     work_categories=mongo.db.work_categories.find())
+
+#@app.route('/edit_submission/<book_title_id>')
+#def edit_submission(book_title_id):
+#    the_sub =  mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+#    all_categories =  mongo.db.categories.find()
+#    return render_template('edittask.html', task=the_task,
+#                           categories=all_categories)
 
 @app.route('/insert_submission', methods=['POST'])
 def insert_submission():
