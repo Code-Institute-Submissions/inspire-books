@@ -17,7 +17,7 @@
                         <li>
                         <h6 class="center collapsible-header">Book Synopsis</h6>
                         <p class="col12 center-align collapsible-body">{{book.synopsis}}  <br><a href="{{book.book_link}}" class="red-text" >Amazon affiliate link</a><br>
-                        <a class="col12 waves-effect waves-light btn blue darken-3">Edit</a>
+                        <a class="col12 waves-effect waves-light btn blue darken-3" href="{{url_for('edit_submission', book_title_id=book._id)}}">Edit</a>
                         <a class="col12 waves-effect waves-light btn darken-3">Delete</a>
                                
                         </p>

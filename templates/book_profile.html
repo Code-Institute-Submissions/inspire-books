@@ -1,35 +1,150 @@
-{% extends 'base.html' %}
-{% block content %}
-{% for book in books %}
+{% extends 'base.html' %} {% block content %}
+<!--Book Edit Input-->
+
 <main class="container">
-	<div class="row ">
-		<div class="col  m6 l6 s12 blue-text darken-3">
-			<img class="responsive-img pad-center" src="the_eye1.png">
-			<h5 class="col12 center-align">{{book.book_title}}</h5> <br>
-			<p class="col12 center-align">Amazon Link</p>
-			<p class="col12 center-align">{{book.inspire_person}}</p>
-			<p class="col12 center-align">Category</p>
-		</div>
+  <h2 class="blue-text text-darken-2">Edit Book Information</h2>
+  <form
+    id="form1"
+    action="{{url_for('update_submission', book_title_id=book._id)}}"
+    method="POST"
+    class=""
+  >
+    <div class="col12">
+      <h5 class="blue-text text-darken-2">Book Title</h5>
+    </div>
+    <div class="col12">
+      <input
+        id="book_title"
+        name="book_title"
+        type="text"
+        value="{{book.book_title}}"
+      />
+    </div>
+    <div class="col12">
+      <h5 class="blue-text text-darken-2">Author</h5>
+    </div>
+    <div class="col12">
+      <input id="author" name="author" type="text" value="{{book.author}}" />
+    </div>
 
-		<div class="col  m6 l6 s12 blue-text darken-3">
-			<div class="row col12">
-				<h4 class=" flow-text center-align">Synopsis will be going here</h4>
-			</div>
-		</div>
+    <div class="col12">
+      <h5 class="blue-text text-darken-2">Book Cover</h5>
+    </div>
+    <div class="col12">
+      <input
+        id="book_cover"
+        name="book_cover"
+        type="text"
+        value="{{book.book_cover}}"
+      />
+    </div>
 
-	</div>
+    <div class="col12">
+      <h5 class="blue-text text-darken-2 col12">Link to Buy</h5>
+    </div>
+    <div class="col12">
+      <input
+        id="book_link"
+        name="book_link"
+        type="url"
+        value="{{book.book_link}}"
+      />
+    </div>
 
-	<h2 class="blue-text text-darken-4"> People Book Inspired </h2>
-	<div class="row top-border">
-		<div class="col12 blue-text darken-3">
-			<img class="responsive-img z-depth-3 center s-img" src="the_eye1.png">
-			<h5 class="col12 center-align">Name</h5>
-			<h6 class="col12 center-align"></h6>
-		</div>
+    <div class="col6">
+      <h5 class="blue-text text-darken-2">Book Category</h5>
+      <!--To Be changed to dropdown-->
+    </div>
+    <div class="col12">
+      <div class="row">
+        <div class="input-field col s12">
+          <select id="category" name="category">
+            <option value="" disabled selected>Choose Book Category</option>
+            {% for cat in categories %} 
+            {% if cat.categories == book.categories%}
+            <option value="{{cat.category}}" selected>{{cat.category}}</option>
+            {% else %}
+            <option value="{{cat.category}}">{{cat.category}}</option>
+            {% endif %} {% endfor %}
+          </select>
+        </div>
+      </div>
+    </div>
 
-	</div>
+    <div class="col12">
+      <h5 class="blue-text text-darken-2">Book Synopsis</h5>
+    </div>
+    <div class="col12">
+      <textarea
+        id="synopsis"
+        name="synopsis"
+        cols="30"
+        rows="10"
+        class="materialize-textarea"
+      >
+{{book.synopsis}}
+      </textarea>
+    </div>
 
+    <h2 class="blue-text text-darken-2">Edit Inspiring Person Profile</h2>
+
+    <div class="col12">
+      <h5 class="blue-text text-darken-2">Inspiring Person</h5>
+    </div>
+    <div class="col12">
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value="{{book.inspire_person}}"
+        class=""
+      />
+
+      <div class="row">
+        <div class="input-field col s12">
+          <select id="work_cat" name="work_cat">
+            <option value="" disabled selected>Choose Person's Industry</option>
+            {% for workcat in category %} 
+                {% if workcat.category == book.category %}
+                <option value="{{workcat.work_cat}}" selected >{{workcat.work_cat}}</option>
+                {% else %}
+                <option value="{{workcat.work_cat}}">{{workcat.work_cat}}</option>
+            {% endif %} {% endfor %}
+          </select>
+        </div>
+      </div>
+
+      <div class="col12">
+        <h5 class="blue-text text-darken-2">Profile Picture</h5>
+        <input id="img" name="img" type="text" value="{{book.img}}" />
+      </div>
+
+      <div class="col12">
+        <div class="input-field col s12">
+          <p class="blue-text text-darken-3">Date of Birth</p>
+          <input
+            id="born"
+            name="born"
+            type="text"
+            class="datepicker"
+            value="{{book.born}}"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="col12 center-align">
+      <div class="col12 center-align">
+        <button
+          class="btn waves-effect waves-light blue darken-3"
+          type="submit"
+          form="form1"
+          value="Submit"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
 </main>
 
-{% endfor %}
 {% endblock %}
