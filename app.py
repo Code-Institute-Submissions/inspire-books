@@ -78,7 +78,10 @@ def update_submission(book_title_id):
     })
     return redirect(url_for('get_books'))
 
-
+@app.route('/delete_submission/<book_title_id>')
+def delete_submission(book_title_id):
+    mongo.db.book_title.remove({'_id': ObjectId(book_title_id)})
+    return redirect(url_for('get_books'))
 
 
 @app.route('/insert_submission', methods=['POST'])
