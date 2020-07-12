@@ -60,6 +60,7 @@
         <div class="input-field col s12">
           <select id="category" name="category">
             <option value="" disabled selected>Choose Book Category</option>
+            <!--all defaulting to science finction but can still choose category-->
             {% for cat in categories %} 
             {% if cat.categories == book.categories%}
             <option value="{{cat.category}}" selected>{{cat.category}}</option>
@@ -104,6 +105,7 @@
         <div class="input-field col s12">
           <select id="work_cat" name="work_cat">
             <option value="" disabled selected>Choose Person's Industry</option>
+            <!--all defaulting to blank but can still choose industry-->
             {% for workcat in category %} 
                 {% if workcat.category == book.category %}
                 <option value="{{workcat.work_cat}}" selected >{{workcat.work_cat}}</option>

@@ -90,13 +90,13 @@ def insert_submission():
     submission.insert_one(request.form.to_dict())
     return redirect(url_for('get_books'))
 
-    submission1 = mongo.db.categories
-    submission1.insert_one(request.form.to_dict())
-    return redirect(url_for('get_books'))
+    #submission1 = mongo.db.categories
+    #submission1.insert_one(request.form.to_dict())
+    #return redirect(url_for('get_books'))
 
-    submission3 = mongo.db.work_categories
-    submission3.insert_one(request.form.to_dict())
-    return redirect(url_for('get_people'))
+    #submission3 = mongo.db.work_categories
+    #submission3.insert_one(request.form.to_dict())
+    #return redirect(url_for('get_people'))
 
 
 if __name__ == '__main__':
