@@ -41,7 +41,16 @@ def get_search():
 
 @app.route('/get_blog')
 def get_blog():
-    return render_template('blog.html')
+    return render_template('blog.html',
+                           blog=mongo.db.blog.find(),
+                           blog_post=mongo.db.blog.find())
+
+
+@app.route('/insert_comment', methods=['POST'])
+def insert_comment():
+    comments = mongo.db.blog
+    comments.find_one({"_id": ObjectId(comments)}).addSpecial("$comment", "comments")
+    return redirect(url_for('get_blog'))
 
 
 @app.route('/get_submission')
@@ -78,6 +87,7 @@ def update_submission(book_title_id):
     })
     return redirect(url_for('get_books'))
 
+
 @app.route('/delete_submission/<book_title_id>')
 def delete_submission(book_title_id):
     mongo.db.book_title.remove({'_id': ObjectId(book_title_id)})
@@ -91,12 +101,12 @@ def insert_submission():
     return redirect(url_for('get_books'))
 
     #submission1 = mongo.db.categories
-    #submission1.insert_one(request.form.to_dict())
-    #return redirect(url_for('get_books'))
+    # submission1.insert_one(request.form.to_dict())
+    # return redirect(url_for('get_books'))
 
     #submission3 = mongo.db.work_categories
-    #submission3.insert_one(request.form.to_dict())
-    #return redirect(url_for('get_people'))
+    # submission3.insert_one(request.form.to_dict())
+    # return redirect(url_for('get_people'))
 
 
 if __name__ == '__main__':
