@@ -27,21 +27,20 @@
           <h4 class="blue-text darken-5 center collapsible-header">
             Comments<i class="material-icons">expand_more</i>
           </h4>
-          <!--accordian comments-->
+          
 
-          <!--Edit and Add for comments-->
+          
           <p class="collapsible-body">
             {{subject.comment}}
             <br />
-            <a class="col12 waves-effect waves-light btn darken-3" href="#"
-              >E</a
-            >
-            <a class="col12 waves-effect waves-light btn red darken-3" href="#"
-              >D</a
-            >
+          
+            <a class="col12 waves-effect waves-light btn red lighten-2" href="#"
+              >Delete</a
+            > <!--Delete comments ready in app.py need to tidy up array-->
           </p>
         </li>
       </ul>
+     
      
             <a class="col12 waves-effect waves-light btn blue darken-3" href="{{url_for('get_add_comment')}}">Add Comment</a>
       
