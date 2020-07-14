@@ -53,7 +53,7 @@ def get_blog():
     return render_template('blog.html',
                            blog=mongo.db.blog.find(),
                            blog_post=mongo.db.blog.find())
-ArrayType = array('u',[])
+
 
 
 #####################Add Comment############################
