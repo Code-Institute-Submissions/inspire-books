@@ -17,6 +17,8 @@ def get_home():
                            home=mongo.db.book_title.find().limit(6),
                            homes=mongo.db.book_title.find().limit(6))
 
+#####################Books############################
+
 
 @app.route('/get_books')
 def get_books():
@@ -24,6 +26,8 @@ def get_books():
                            books=mongo.db.book_title.find(),
                            categories=mongo.db.categories.find(),
                            books_limit=mongo.db.book_title.find().limit(6))
+
+#####################People############################
 
 
 @app.route('/get_people')
@@ -33,10 +37,14 @@ def get_people():
                            work_categories=mongo.db.work_categories.find(),
                            books_limit=mongo.db.book_title.find().limit(6))
 
+#####################Search############################
+
 
 @app.route('/get_search')
 def get_search():
     return render_template('search.html')
+
+#####################Blog############################
 
 
 @app.route('/get_blog')
@@ -46,21 +54,32 @@ def get_blog():
                            blog_post=mongo.db.blog.find())
 
 
-@app.route('/insert_comment', methods=['POST'])
-def insert_comment():
-    comments = mongo.db.blog
-    comments.find_one({"_id": ObjectId(comments)}).addSpecial("$comment", "comments")
+#####################Add Comment############################
+
+@app.route('/get_add_comment.')
+def get_add_comment():
+    return render_template('add_comment.html',
+                           blog=mongo.db.blog.find(),
+                           blog_post=mongo.db.blog.find())
+
+@app.route('/insert_comment/<blog_id>', methods=['POST'])
+def insert_comment(blog_id):
+    blog = mongo.db.blog
+    blog.update_one({'_id': ObjectID(blog_id)},
+                    {'$push': {'comment': request.form.get('comment')}})
     return redirect(url_for('get_blog'))
 
 
-@app.route('/get_submission')
+#####################Submission############################
+@ app.route('/get_submission')
 def get_submission():
     return render_template('submission.html',
                            categories=mongo.db.categories.find(),
                            work_categories=mongo.db.work_categories.find())
 
 
-@app.route('/edit_submission/<book_title_id>')
+#####################Edit books and people############################
+@ app.route('/edit_submission/<book_title_id>')
 def edit_submission(book_title_id):
     the_book = mongo.db.book_title.find_one({"_id": ObjectId(book_title_id)})
     all_categories = mongo.db.book_title.find()
@@ -69,7 +88,7 @@ def edit_submission(book_title_id):
                            categories=all_categories, category=all_cat)
 
 
-@app.route('/update_submission/<book_title_id>', methods=["POST"])
+@ app.route('/update_submission/<book_title_id>', methods=["POST"])
 def update_submission(book_title_id):
     book = mongo.db.book_title
     book.update({'_id': ObjectId(book_title_id)},
@@ -87,26 +106,20 @@ def update_submission(book_title_id):
     })
     return redirect(url_for('get_books'))
 
+#####################Delete books and people############################
 
-@app.route('/delete_submission/<book_title_id>')
+
+@ app.route('/delete_submission/<book_title_id>')
 def delete_submission(book_title_id):
     mongo.db.book_title.remove({'_id': ObjectId(book_title_id)})
     return redirect(url_for('get_books'))
 
 
-@app.route('/insert_submission', methods=['POST'])
+@ app.route('/insert_submission', methods=['POST'])
 def insert_submission():
     submission = mongo.db.book_title
     submission.insert_one(request.form.to_dict())
     return redirect(url_for('get_books'))
-
-    #submission1 = mongo.db.categories
-    # submission1.insert_one(request.form.to_dict())
-    # return redirect(url_for('get_books'))
-
-    #submission3 = mongo.db.work_categories
-    # submission3.insert_one(request.form.to_dict())
-    # return redirect(url_for('get_people'))
 
 
 if __name__ == '__main__':

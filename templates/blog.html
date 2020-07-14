@@ -31,7 +31,7 @@
 
           <!--Edit and Add for comments-->
           <p class="collapsible-body">
-            {{subject.comments}}
+            {{subject.comment}}
             <br />
             <a class="col12 waves-effect waves-light btn darken-3" href="#"
               >E</a
@@ -42,27 +42,9 @@
           </p>
         </li>
       </ul>
-      <form action="{{url_for('insert_comment')}}" method="POST" id="form2">
-        <div class="center">
-          <textarea
-            id="comment"
-            name="comment"
-            cols="30"
-            rows="10"
-            class="materialize-textarea"
-          >
-          </textarea>
-        </div>
-
-        <button
-          class="btn waves-effect waves-light blue darken-3"
-          type="submit"
-          form="form2"
-          value="Submit"
-        >
-          Add comment
-        </button>
-      </form>
+     
+            <a class="col12 waves-effect waves-light btn blue darken-3" href="{{url_for('get_add_comment')}}">Add Comment</a>
+      
     </div>
     {% endfor %}
   </div>
