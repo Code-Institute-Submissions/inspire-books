@@ -28,23 +28,44 @@
             Comments<i class="material-icons">expand_more</i>
           </h4>
 
-          
-            {% for comment in subject.comments %} 
-            <h6 class="collapsible-body">{{comment}}<a class="col12 waves-effect waves-light btn red lighten-2 btn-small" href="#"
+          {% for comment in subject.comments %}
+          <h6 class="collapsible-body left-align">
+            {{comment}}<a
+              class="waves-effect waves-light btn red lighten-2 btn-small right"
+              href="#"
               >Delete</a
-            ></h6>
-            {% endfor%}
-            <br />
-
-         
+            >
+          </h6>
+          {% endfor%}
+          <br />
         </li>
       </ul>
 
-      <a
-        class="col12 waves-effect waves-light btn blue darken-3"
-        href="{{url_for('get_add_comment')}}"
-        >Add Comment</a
-      >
+      <div class="row">
+        <form
+          action="{{url_for('insert_comment', blog_id=blog._id)}}"
+          method="POST"
+        >
+          <div class="center">
+            <textarea
+              id="comments"
+              name="comments"
+              cols="30"
+              rows="10"
+              class="materialize-textarea"
+            >
+            </textarea>
+          </div>
+
+          <button
+            class="btn waves-effect waves-light blue darken-3"
+            type="submit"
+            name="action"
+          >
+            Add comment
+          </button>
+        </form>
+      </div>
     </div>
   </div>
   {% endfor %}

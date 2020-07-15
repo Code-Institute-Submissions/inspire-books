@@ -1,13 +1,13 @@
 {% extends 'base.html' %} {% block content %}
-
+<!--Practising to get it right on this page-->
 <main class="container">
   <div class="row">
  
-      <form action="{{url_for('insert_comment', blog_id=blog._id)}}" method="POST" id="form2">
+      <form action="{{url_for('insert_comment', blog_id=blog.comments)}}" method="POST" id="form2">
         <div class="center">
           <textarea
-            id="comment"
-            name="comment"
+            id="comments"
+            name="comments"
             cols="30"
             rows="10"
             class="materialize-textarea"
@@ -21,6 +21,7 @@
           type="submit"
           form="form2"
           value="Submit"
+          
         >
           Add comment
         </button>

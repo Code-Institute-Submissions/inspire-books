@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from array import *
+
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'book_repo'
@@ -55,7 +55,6 @@ def get_blog():
                            blog_post=mongo.db.blog.find())
 
 
-
 #####################Add Comment############################
 
 @app.route('/get_add_comment.')
@@ -63,12 +62,13 @@ def get_add_comment():
     return render_template('add_comment.html',
                            blog=mongo.db.blog.find())
 
+
 @app.route('/insert_comment/<blog_id>', methods=['POST'])
 def insert_comment(blog_id):
     blog = mongo.db.blog
     blog.update_one({'_id': ObjectID(blog_id)},
-                    {'$push': {'comment': request.form.get('comment')}
-                    })
+                    {'$push': {'comments': request.form.get('comments')}
+                     })
     return redirect(url_for('get_blog'))
 
 
