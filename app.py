@@ -71,10 +71,12 @@ def insert_comment(blog_id):
                     })
     return redirect(url_for('get_blog'))
 
-@ app.route('/insert_comment/<blog_id>')
+
+@ app.route('/delete_comment/<blog_id>')
 def delete_comment(blog_id):
-    mongo.db.book_title.remove({'_id': ObjectId(blog_id)})
+    mongo.db.blog.remove({'_id': ObjectId(blog_id)})
     return redirect(url_for('get_blog'))
+
 
 #####################Submission############################
 @ app.route('/get_submission')
