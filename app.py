@@ -63,10 +63,10 @@ def get_add_comment():
                            blog=mongo.db.blog.find())
 
 
-@app.route('/insert_comment/<blog_id>', methods=['POST'])
-def insert_comment(blog_id):
+@app.route('/insert_comment/<subject_id>', methods=['POST'])
+def insert_comment(subject_id):
     blog = mongo.db.blog
-    blog.update_one({'_id': ObjectID(blog_id)},
+    blog.update_one({'_id': ObjectId(subject_id)},
                     {'$push': {'comments': request.form.get('comments')}
                      })
     return redirect(url_for('get_blog'))

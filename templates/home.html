@@ -21,7 +21,7 @@
   <div class="row top-border">
     {% for home in homes %}
     <div class="col s6 m4 l2">
-        <div class="">
+        <div class="carousel">
         <a href="{{url_for('get_people')}}"><img class="responsive-img z-depth-3" src="{{home.img}}" /></a>
         <h5 class="blue-text darken-3 center-align">{{home.inspire_person}}</h5>
         <h6 class="blue-text darken-3 center-align">{{home.work_cat}}</h6>
