@@ -67,6 +67,20 @@ def insert_blog():
     blog.insert_one(request.form.to_dict())
     return redirect(url_for('get_blog'))
 
+
+@ app.route('/delete_subject/<subject_id>')
+def delete_subject(subject_id):
+    mongo.db.blog.remove({'_id': ObjectId(subject_id)})
+    return redirect(url_for('get_blog'))
+
+
+@ app.route('/edit_blog/<subject_id>')
+def edit_blog(subject_id):
+    the_subject = mongo.db.blog.find_one({"_id": ObjectId(subject_id)})
+    all_blog = mongo.db.blog.find()
+    return render_template('edit_blog.html', subject=the_subject,
+                           blog=all_blog)
+
 #####################Add Comment############################
 
 
@@ -79,6 +93,8 @@ def insert_comment(subject_id):
     return redirect(url_for('get_blog'))
 
 # needs fixed
+
+
 @ app.route('/delete_comment/<subject_id>')
 def delete_comment(subject_id):
     mongo.db.blog.update({'_id': ObjectId(subject_id)},

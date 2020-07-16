@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
 <main class="container">
-  <form action="{{url_for('insert_blog')}}" method="POST" class="">
+  <form action="{{url_for('edit_blog', subject_id=subject._id)}}" method="POST" class="">
     <div class="row">
       <div class="col12">
         <h5 class="blue-text text-darken-2">Discussion Title</h5>
@@ -12,6 +12,7 @@
           name="reading_title"
           type="text"
           placeholder="Book Title"
+          value="{{subject.reading_title}}"
         />
       </div>
     </div>
@@ -26,6 +27,7 @@
         cols="30"
         rows="10"
         class="materialize-textarea"
+        value="{{subject.main_subject}}"
       >
       </textarea>
     </div>
