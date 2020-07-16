@@ -55,12 +55,19 @@ def get_blog():
                            blog_post=mongo.db.blog.find())
 
 
-#####################Add Comment############################
-
-@app.route('/get_add_comment.')
-def get_add_comment():
-    return render_template('add_comment.html',
+@app.route('/get_add_blog')
+def get_add_blog():
+    return render_template('add_blog.html',
                            blog=mongo.db.blog.find())
+
+
+@ app.route('/insert_blog', methods=['POST'])
+def insert_blog():
+    blog = mongo.db.blog
+    blog.insert_one(request.form.to_dict())
+    return redirect(url_for('get_blog'))
+
+#####################Add Comment############################
 
 
 @app.route('/insert_comment/<subject_id>', methods=['POST'])
@@ -71,10 +78,12 @@ def insert_comment(subject_id):
                      })
     return redirect(url_for('get_blog'))
 
-
-@ app.route('/delete_comment/<blog_id>')
-def delete_comment(blog_id):
-    mongo.db.blog.remove({'_id': ObjectId(blog_id)})
+# needs fixed
+@ app.route('/delete_comment/<subject_id>')
+def delete_comment(subject_id):
+    mongo.db.blog.update({'_id': ObjectId(subject_id)},
+                         {'$pull': {'comments': request.form.get('comments')}
+                          })
     return redirect(url_for('get_blog'))
 
 

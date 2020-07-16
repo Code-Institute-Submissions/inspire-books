@@ -1,0 +1,54 @@
+{% extends 'base.html' %} {% block content %}
+<!--Book Input-->
+<main class="container">
+  <form action="{{url_for('insert_blog')}}" method="POST" class="">
+    <div class="row">
+      <div class="col12">
+        <h5 class="blue-text text-darken-2">Discussion Title</h5>
+      </div>
+      <div class="col12">
+        <input
+          id="reading_title"
+          name="reading_title"
+          type="text"
+          placeholder="Book Title"
+        />
+      </div>
+    </div>
+
+    <div class="col12">
+      <h5 class="blue-text text-darken-2">Discussion Subject</h5>
+    </div>
+    <div class="col12">
+      <textarea
+        id="main_subject"
+        name="main_subject"
+        cols="30"
+        rows="10"
+        class="materialize-textarea"
+      >
+      </textarea>
+    </div>
+  
+
+    
+    <div class="col12 center-align">
+   <button
+      class="btn waves-effect waves-light blue darken-3"
+      type="submit"
+      value="Submit"
+    >
+      Submit
+    </button>
+
+    </div>
+
+
+  </form>
+
+  
+ 
+  
+</main>
+
+{% endblock %}
