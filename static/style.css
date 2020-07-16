@@ -32,6 +32,11 @@ nav .brand-logo.right {
     margin-right: 15px;
 }
 
+.space-top{
+    margin-top: 15px;
+    padding-top: 15px;
+}
+
 /*------Books-------*/
 
 div.col.s6.m4.l4{

@@ -1,7 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 
 <main class="container">
+
+<div class="row space-top">
   <form action="{{url_for('edit_blog', subject_id=subject._id)}}" method="POST" class="">
+  <div class="row">
     <div class="row">
       <div class="col12">
         <h5 class="blue-text text-darken-2">Discussion Title</h5>
@@ -16,7 +19,8 @@
         />
       </div>
     </div>
-
+</div>
+    <div class="row">
     <div class="col12">
       <h5 class="blue-text text-darken-2">Discussion Subject</h5>
     </div>
@@ -31,8 +35,9 @@
       >
       </textarea>
     </div>
+    </div>
   
-
+<div class="row">
     
     <div class="col12 center-align">
    <button
@@ -45,9 +50,9 @@
 
     </div>
 
-
+</div>
   </form>
-
+</div>
   
  
   
