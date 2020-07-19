@@ -45,6 +45,13 @@ def get_people():
 def get_search():
     return render_template('search.html')
 
+#@app.route('/')
+#def get_search():
+#    search= mongo.db.book_title
+#    search.book_title.find({book_title : "#"}).forEach(printjson);
+#    text_results = db.command('text', 'posts', search=query, filter={'related':True}, limit=1)
+#        return render_template('search.html')
+
 #####################Blog############################
 
 
