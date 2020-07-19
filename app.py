@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+import json
 
 
 app = Flask(__name__)
@@ -102,11 +103,11 @@ def insert_comment(subject_id):
 # needs fixed
 
 
-@ app.route('/delete_comment/<comments_id>')
-def delete_comment(comments_id):
+@app.route('/delete_comment/<subject_id>/<array_index>')
+def delete_comment(subject_id, array_index):
     blog = mongo.db.blog
-    blog.update_one({'_id': ObjectId(comments_id)},
-                    {'$pull': {'comments': request.form.get('comments')}
+    blog.update_one({'_id': ObjectId(subject_id)},
+                    {'$pull': {'comments': array_index}
                      })
     return redirect(url_for('get_blog'))
 
