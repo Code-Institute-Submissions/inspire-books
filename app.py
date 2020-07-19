@@ -45,8 +45,8 @@ def get_people():
 def get_search():
     return render_template('search.html')
 
-#@app.route('/')
-#def get_search():
+# @app.route('/')
+# def get_search():
 #    search= mongo.db.book_title
 #    search.book_title.find({book_title : "#"}).forEach(printjson);
 #    text_results = db.command('text', 'posts', search=query, filter={'related':True}, limit=1)
@@ -102,11 +102,12 @@ def insert_comment(subject_id):
 # needs fixed
 
 
-@ app.route('/delete_comment/<subject_id>')
-def delete_comment(subject_id):
-    mongo.db.blog.update({'_id': ObjectId(subject_id)},
-                         {'$pull': {'comments': request.form.get('comments')}
-                          })
+@ app.route('/delete_comment/<comments_id>')
+def delete_comment(comments_id):
+    blog = mongo.db.blog
+    blog.update_one({'_id': ObjectId(comments_id)},
+                    {'$pull': {'comments': request.form.get('comments')}
+                     })
     return redirect(url_for('get_blog'))
 
 
