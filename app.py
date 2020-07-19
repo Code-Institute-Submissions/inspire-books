@@ -103,12 +103,11 @@ def insert_comment(subject_id):
 # needs fixed
 
 
-@app.route('/delete_comment/<subject_id>/<array_index>')
-def delete_comment(subject_id, array_index):
+@app.route('/delete_comment/<subject_id>/<comment>')
+def delete_comment(subject_id, comment):
     blog = mongo.db.blog
     blog.update_one({'_id': ObjectId(subject_id)},
-                    {'$pull': {'comments': array_index}
-                     })
+                    {'$pull': {'comments': comment}})
     return redirect(url_for('get_blog'))
 
 

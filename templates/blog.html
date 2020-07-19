@@ -32,15 +32,10 @@
 
           {% for comments in subject.comments %}
           <h6 class="collapsible-body">
-            {{ loop.index-1 }}.{{comments}}
-            
-            <!--{% for name in subject.name %}{{ loop.index-1 }}.{{name}}{% endfor%}-->
+            {{comments}}
             <br>
-            <a
-              class="waves-effect waves-light btn red lighten-2 btn-small"
-              href="{{url_for('delete_comment', subject_id=subject._id, array_index=loop.index-1)}}"
-              >Delete</a
-            >
+            <a class="waves-effect waves-light btn red lighten-2 btn-small"
+                href="{{url_for('delete_comment', subject_id=subject._id, comment=comments)}}">Delete</a>
           </h6>
           
           {% endfor%}
