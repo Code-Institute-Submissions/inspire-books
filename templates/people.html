@@ -2,14 +2,14 @@
 
 <main class="container">
 	<div class="row">
-		<div class="col l9 m12 s12 blue-text darken-3">
+		<div class="col l9 m12 s12 blue-text">
 			<div class="row flex">
 
 				{% for book in books %}
 				<div class="col s6 m6 l4">
 					
 						<img class="responsive-img z-depth-3" src="{{book.img}}"/>
-						<h5 class="center-align">{{book.inspire_person}}</h5>
+						<h5 class="center-align blue-text text-darken-3">{{book.inspire_person}}</h5>
                         
 						<h6 class="center-align">{{book.work_cat}}</h6>
                         

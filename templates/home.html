@@ -23,8 +23,8 @@
     <div class="col s6 m4 l2">
         <div class="">
         <a href="{{url_for('get_people')}}"><img class="responsive-img z-depth-3" src="{{home.img}}" /></a>
-        <h5 class="blue-text darken-3 center-align">{{home.inspire_person}}</h5>
-        <h6 class="blue-text darken-3 center-align">{{home.work_cat}}</h6>
+        <h5 class="blue-text  center-align">{{home.inspire_person}}</h5>
+        <h6 class="blue-text text-darken-3 center-align">{{home.work_cat}}</h6>
         </div>
     </div>
     {% endfor %}
@@ -36,8 +36,8 @@
     <div class="col s6 m4 l2">
     <div class=" ">
       <a href="{{url_for('get_books')}}"><img class="responsive-img z-depth-3" src="{{home.book_cover}}" /></a>
-      <h5 class="blue-text darken-3 center-align truncate">{{home.book_title}}</h5>
-      <h6 class="blue-text darken-3 center-align ">Recommended By <br>{{home.inspire_person}}</h6>
+      <h5 class="blue-text  center-align truncate">{{home.book_title}}</h5>
+      <h6 class="blue-text text-darken-3 center-align ">Recommended By <br>{{home.inspire_person}}</h6>
     </div>
     </div>
     {% endfor %}
