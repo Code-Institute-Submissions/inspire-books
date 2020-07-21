@@ -37,6 +37,10 @@ nav .brand-logo.right {
     padding-top: 60px;
 }
 
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 /*------Books-------*/
 
