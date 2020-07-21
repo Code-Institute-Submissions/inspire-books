@@ -10,13 +10,13 @@
 				<div class="col s6 m6 l4">
 					
 						<img class="responsive-img z-depth-3 center" src="{{book.book_cover}}"/>
-						<h5 class="center-align">{{book.book_title}}</h5>
+						<h5 class="center-align truncate">{{book.book_title}}</h5>
                         <h6 class="center-align">by {{book.author}}</h6>
                         <h8 class="center">Categorised as {{book.category}}</h8>
-						<h6 class="center-align">Recommended By {{book.inspire_person}}</h6>
+						<h6 class="center-align truncate">Recommended By {{book.inspire_person}}</h6>
                         <ul class="collapsible">
                         <li>
-                        <h6 class="center collapsible-header">Book Synopsis</h6>
+                        <h6 class="center collapsible-header hoverable">Book Synopsis</h6>
                         <p class="col12 collapsible-body">{{book.synopsis}}  <br><a href="{{book.book_link}}" class="red-text center" >Amazon affiliate link</a><br>
                         <a class="col12 waves-effect waves-light btn blue darken-3 center" href="{{url_for('edit_submission', book_title_id=book._id)}}">Edit</a>
                         <a class="col12 waves-effect waves-light btn darken-3 center" href="{{url_for('delete_submission', book_title_id=book._id)}}">Delete</a>

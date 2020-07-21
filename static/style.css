@@ -42,6 +42,12 @@ nav .brand-logo.right {
   flex-wrap: wrap;
 }
 
+.rad {
+    border-radius: 20px;
+}
+
+
+
 /*------Books-------*/
 
 div.col.s6.m4.l4{

@@ -16,8 +16,9 @@
   </head>
 
   <body>
+  <div class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper navbar-fixed white z-depth-3">
+      <div class="nav-wrapper white z-depth-3">
         <a
           href="{{url_for('get_home')}}"
           class="brand-logo right blue-text text-darken-2"
@@ -58,6 +59,7 @@
         </ul>
       </div>
     </nav>
+    </div>
     <ul class="sidenav" id="mobile-demo">
       <li><a href="{{url_for('get_home')}}">Home</a></li>
       <li><a href="{{url_for('get_people')}}">People</a></li>
@@ -137,7 +139,6 @@
             $('.sidenav').sidenav();
             $('.collapsible').collapsible();
             $('select').formSelect();
-            $('.carousel').carousel();
             $('.datepicker').datepicker({
             selectMonths: true, // Creates a dropdown to control month
             selectYears: 15, // Creates a dropdown of 15 years to control year,
