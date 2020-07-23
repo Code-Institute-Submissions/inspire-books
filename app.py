@@ -89,6 +89,7 @@ def edit_blog(subject_id):
     return render_template('edit_blog.html', subject=the_subject,
                            blog=all_blog)
 
+
 @ app.route('/update_blog/<subject_id>', methods=["POST"])
 def update_blog(subject_id):
     blog = mongo.db.blog
@@ -107,18 +108,19 @@ def update_blog(subject_id):
 def insert_comment(subject_id):
     blog = mongo.db.blog
     blog.update_one({'_id': ObjectId(subject_id)},
-                    {'$push': {'comments': request.form.get('comments')}
+                    {'$push': {'comments': request.form.get('comments'),
+                               'comment_author': request.form.get('comment_author')}
                      })
     return redirect(url_for('get_blog'))
 
-# needs fixed
 
-
-@app.route('/delete_comment/<subject_id>/<comment>')
-def delete_comment(subject_id, comment):
+@app.route('/delete_comment/<subject_id>/<comment>/<author>')
+def delete_comment(subject_id, comment, author):
     blog = mongo.db.blog
     blog.update_one({'_id': ObjectId(subject_id)},
-                    {'$pull': {'comments': comment}})
+                    {'$pull': {'comments': comment,
+                               'comment_author': author}
+                     })
     return redirect(url_for('get_blog'))
 
 

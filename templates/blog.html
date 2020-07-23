@@ -14,8 +14,14 @@
         src="{{url_for('static', filename='stacked_books.jpg')}}"
       />
       <h4 class="blue-text darken-3 center-align">{{subject.reading_title}}</h4>
-      <a class="waves-effect waves-light btn pink lighten-4 btn-small right rad-but" href="{{url_for('delete_subject', subject_id=subject._id)}}" ></a>
-      <a class="waves-effect waves-light btn teal lighten-4 btn-small right rad-but" href="{{url_for('edit_blog', subject_id=subject._id)}}" ></a>
+      <a
+        class="waves-effect waves-light btn pink lighten-4 btn-small right rad-but"
+        href="{{url_for('delete_subject', subject_id=subject._id)}}"
+      ></a>
+      <a
+        class="waves-effect waves-light btn teal lighten-4 btn-small right rad-but"
+        href="{{url_for('edit_blog', subject_id=subject._id)}}"
+      ></a>
     </div>
 
     <div class="col l8 m8 s12 center">
@@ -30,39 +36,64 @@
             Comments<i class="material-icons">expand_more</i>
           </h4>
 
-          {% for comments in subject.comments %}
           <h6 class="collapsible-body">
-          <div class="row">
-          <div class="col l9 m9 s12 left-align">
-            {{comments}}
+            {% for comments in subject.comments %}
+            {% for comment_author in subject.comment_author %}
+            <div class="row">
+              <div class="col s9 left-align">
+                <p>{{comments}}</p>
+              </div>
+                
+              <div class="col s3">
+                
+                <p>Written by {{comment_author}}</p>
+                <a
+                  class="waves-effect waves-light btn pink lighten-4 btn-small col3 rad-but"
+                  href="{{url_for('delete_comment', subject_id=subject._id, comment=comments, author=comment_author)}}"
+                ></a>
+              </div> 
             </div>
-            <div class="col l3 m3 s12">
-            <a class="waves-effect waves-light btn pink lighten-4 btn-small col3  no-marge "
-                href="{{url_for('delete_comment', subject_id=subject._id, comment=comments)}}">Delete</a>
-                </div>
-                </div>
+                {% endfor%}
+            {% endfor%}
           </h6>
-          
-          {% endfor%}
-          
         </li>
       </ul>
 
       <div class="row">
-        <form action="{{url_for('insert_comment', subject_id=subject._id)}}" method="POST">
-          <div class="center">
-            <textarea
-              id="comments"
-              name="comments"
-              cols="30"
-              rows="10"
-              class="materialize-textarea">
-            </textarea>
+        <form
+          action="{{url_for('insert_comment', subject_id=subject._id)}}"
+          method="POST"
+        >
+          <!--Name Insert-->
+          <div class="container">
+            <div class="col12">
+              <input
+                id="comment_author"
+                name="comment_author"
+                type="text"
+                placeholder="Add Name"
+              />
+            </div>
+            <!--Comment Insert-->
+            <br />
+            <div class="col12">
+              <textarea
+                id="comments"
+                name="comments"
+                cols="30"
+                rows="10"
+                class="materialize-textarea"
+              >
+Add Comment
+            </textarea
+              >
+            </div>
           </div>
-
-          <button class="btn waves-effect waves-light blue darken-3"
+          <button
+            class="btn waves-effect waves-light blue darken-3"
             type="submit"
-            name="action">
+            name="action"
+          >
             Add comment
           </button>
         </form>
@@ -70,5 +101,11 @@
     </div>
   </div>
   {% endfor %}
+  <div>
+    <h6 class="center">
+      Delete <a class="btn pink lighten-4 btn-small rad-but" href="#"></a> Edit
+      <a class="btn teal lighten-4 btn-small rad-but" href="#"></a>
+    </h6>
+  </div>
 </main>
 {% endblock %}
