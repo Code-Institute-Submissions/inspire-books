@@ -91,3 +91,6 @@ textarea {
     margin: 10px;
 }
 
+.rad-but{
+    border-radius: 50%;
+}

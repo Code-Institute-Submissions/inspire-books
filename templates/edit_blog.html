@@ -1,60 +1,61 @@
 {% extends 'base.html' %} {% block content %}
 
 <main class="container">
-
-<div class="row space-top">
-  <form action="{{url_for('edit_blog', subject_id=subject._id)}}" method="POST" class="">
-  <div class="row">
-    <div class="row">
-      <div class="col12">
-        <h5 class="blue-text text-darken-2">Discussion Title</h5>
-      </div>
-      <div class="col12">
-        <input
-          id="reading_title"
-          name="reading_title"
-          type="text"
-          placeholder="Book Title"
-          value="{{subject.reading_title}}"
-        />
-      </div>
-    </div>
-</div>
-    <div class="row space-top">
-    <div class="col12">
-      <h5 class="blue-text text-darken-2 ">Discussion Subject</h5>
-    </div>
-    <div class="col12">
-      <textarea
-        id="main_subject"
-        name="main_subject"
-        cols="30"
-        rows="10"
-        class="materialize-textarea"
-      >{{subject.main_subject}}
-      </textarea>
-    </div>
-    </div>
-  
-<div class="row space-top">
-    
-    <div class="col12 center-align">
-   <button
-      class="btn waves-effect waves-light blue darken-3"
-      type="submit"
-      value="Submit"
+  <div class="row space-top">
+    <form
+      action="{{url_for('update_blog', subject_id=subject._id)}}"
+      method="POST"
+      class=""
+      id="form3"
     >
-      Submit
-    </button>
+      <div class="row">
+        <div class="row">
+          <div class="col12">
+            <h5 class="blue-text text-darken-2">Discussion Title</h5>
+          </div>
+          <div class="col12">
+            <input
+              id="reading_title"
+              name="reading_title"
+              type="text"
+              placeholder="Book Title"
+              value="{{subject.reading_title}}"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row space-top">
+        <div class="col12">
+          <h5 class="blue-text text-darken-2">Discussion Subject</h5>
+        </div>
+        <div class="col12">
+          <textarea
+            id="main_subject"
+            name="main_subject"
+            cols="30"
+            rows="10"
+            class="materialize-textarea"
+          >
+{{subject.main_subject}}
+      </textarea
+          >
+        </div>
+      </div>
 
-    </div>
-
-</div>
-  </form>
-</div>
-  
- 
-  
+      <div class="row space-top">
+        <div class="col12 center-align">
+          <button
+            class="btn waves-effect waves-light blue darken-3"
+            type="submit"
+            form="form3"
+            value="Submit"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
 </main>
 
 {% endblock %}

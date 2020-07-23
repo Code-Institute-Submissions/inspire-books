@@ -89,6 +89,17 @@ def edit_blog(subject_id):
     return render_template('edit_blog.html', subject=the_subject,
                            blog=all_blog)
 
+@ app.route('/update_blog/<subject_id>', methods=["POST"])
+def update_blog(subject_id):
+    blog = mongo.db.blog
+    blog.update({'_id': ObjectId(subject_id)},
+                {
+        'reading_title': request.form.get('reading_title'),
+        'main_subject': request.form.get('main_subject')
+    })
+    return redirect(url_for('get_blog'))
+
+
 #####################Add Comment############################
 
 
