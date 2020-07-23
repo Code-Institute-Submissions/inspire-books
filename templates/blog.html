@@ -35,27 +35,28 @@
           <h4 class="blue-text darken-5 center collapsible-header">
             Comments<i class="material-icons">expand_more</i>
           </h4>
-
-          <h6 class="collapsible-body">
-            {% for comments in subject.comments %}
+          
+          {% for comments in subject.comments %}
             {% for comment_author in subject.comment_author %}
+          <h6 class="collapsible-body">
             <div class="row">
               <div class="col s9 left-align">
                 <p>{{comments}}</p>
               </div>
-                
+            
               <div class="col s3">
-                
+              
                 <p>Written by {{comment_author}}</p>
                 <a
                   class="waves-effect waves-light btn pink lighten-4 btn-small col3 rad-but"
                   href="{{url_for('delete_comment', subject_id=subject._id, comment=comments, author=comment_author)}}"
                 ></a>
-              </div> 
+               
+              </div>
             </div>
-                {% endfor%}
-            {% endfor%}
           </h6>
+            {% endfor %}
+          {% endfor %}
         </li>
       </ul>
 
