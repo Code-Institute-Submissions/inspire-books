@@ -61,8 +61,7 @@
           <select id="category" name="category">
             <option value="" disabled selected>Choose Book Category</option>
             <!--all defaulting to science finction but can still choose category-->
-            {% for cat in categories %} {% if cat.category ==
-            book.category%}
+            {% for cat in categories %} {% if cat.category == book.category%}
             <option value="{{cat.category}}" selected>{{cat.category}}</option>
             {% else %}
             <option value="{{cat.category}}">{{cat.category}}</option>

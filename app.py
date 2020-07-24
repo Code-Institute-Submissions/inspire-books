@@ -39,19 +39,6 @@ def get_people():
                            work_categories=mongo.db.work_categories.find(),
                            books_limit=mongo.db.book_title.find().limit(6))
 
-#####################Search############################
-
-
-@app.route('/get_search')
-def get_search():
-    return render_template('search.html')
-
-# @app.route('/')
-# def get_search():
-#    search= mongo.db.book_title
-#    search.book_title.find({book_title : "#"}).forEach(printjson);
-#    text_results = db.command('text', 'posts', search=query, filter={'related':True}, limit=1)
-#        return render_template('search.html')
 
 #####################Blog############################
 
@@ -108,18 +95,16 @@ def update_blog(subject_id):
 def insert_comment(subject_id):
     blog = mongo.db.blog
     blog.update_one({'_id': ObjectId(subject_id)},
-                    {'$push': {'comments': request.form.get('comments'),
-                               'comment_author': request.form.get('comment_author')}
-                     })
+                    {'$push': {'comments': request.form.get('comments')
+                               }})
     return redirect(url_for('get_blog'))
 
 
-@app.route('/delete_comment/<subject_id>/<comment>/<author>')
-def delete_comment(subject_id, comment, author):
+@app.route('/delete_comment/<subject_id>/<comment>')
+def delete_comment(subject_id, comment):
     blog = mongo.db.blog
     blog.update_one({'_id': ObjectId(subject_id)},
-                    {'$pull': {'comments': comment,
-                               'comment_author': author}
+                    {'$pull': {'comments': comment}
                      })
     return redirect(url_for('get_blog'))
 

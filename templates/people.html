@@ -1,60 +1,61 @@
 {% extends 'base.html' %} {% block content %}
 
 <main class="container">
-	<div class="row">
-		<div class="col l9 m12 s12 blue-text">
-			<div class="row flex">
+  <div class="row">
+    <div class="col l9 m12 s12 blue-text">
+      <div class="row flex">
+        {% for book in books %}
+        <div class="col s6 m6 l4">
+          <img class="responsive-img z-depth-3" src="{{book.img}}" />
+          <h5 class="center-align blue-text text-darken-3">
+            {{book.inspire_person}}
+          </h5>
 
-				{% for book in books %}
-				<div class="col s6 m6 l4">
-					
-						<img class="responsive-img z-depth-3" src="{{book.img}}"/>
-						<h5 class="center-align blue-text text-darken-3">{{book.inspire_person}}</h5>
-                        
-						<h6 class="center-align">{{book.work_cat}}</h6>
-                        
-                        <p class="center-align">Born {{book.born}}</p>
-                        <p class="center-align  hoverable"><a href="{{url_for('get_books')}}">Recommended {{book.book_title}}</a></p>
+          <h6 class="center-align">{{book.work_cat}}</h6>
 
-                        <div class="center">
-                        
-                        </div>
-				</div>
-				{% endfor %}
+          <p class="center-align">Born {{book.born}}</p>
+          <p class="center-align hoverable">
+            <a href="{{url_for('get_books')}}"
+              >Recommended {{book.book_title}}</a
+            >
+          </p>
 
-			</div>
-		</div>
+          <div class="center"></div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
 
-        <!-- Work Categories-->
-            <div class="row">
-            <div class="col l3 m12 s12 blue-text darken-3 ">
-                <h4 class="col12 left-pad">Categories</h4>
-                {% for workcat in work_categories %}
-                <p class="col12 left-pad">{{workcat.work_cat}}</p>
-                {% endfor %}
-                <div class="row">
-                <!--<div class="col12">
-                <input type="search" class="" placeholder="Search for Book Name"> <button id="search" class="btn waves-effect waves-light blue darken-4" type="submit" name="action">Search
-                    <i class="material-icons right">search</i>
-                    </button>
-                </div>-->
-            </div>
-            </div>
-            
-            </div>
-        
-	</div>
-    
-	<h2 class="blue-text text-darken-4">Featured Books</h2>
-	<div class="row top-border  ">
-		{% for book in books_limit %}
-		<div class="col s6 m4 l2">
-			<a href="{{url_for('get_books')}}"><img class="responsive-img z-depth-3 hoverable" src="{{book.book_cover}}" /></a>
-			<h5 class="blue-text darken-3 center-align truncate">{{book.book_title}}</h5>
-			<h6 class="blue-text darken-3 center-align">Recommended By <br>{{book.inspire_person}}</h6>
-		</div>
-		{% endfor %}
-	</div>
+    <!-- Work Categories-->
+    <div class="row">
+      <div class="col l3 m12 s12 blue-text darken-3">
+        <h4 class="col12 left-pad">Categories</h4>
+        {% for workcat in work_categories %}
+        <p class="col12 left-pad">{{workcat.work_cat}}</p>
+        {% endfor %}
+        <div class="row"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="blue-text text-darken-4">Featured Books</h2>
+  <div class="row top-border">
+    {% for book in books_limit %}
+    <div class="col s6 m4 l2">
+      <a href="{{url_for('get_books')}}"
+        ><img
+          class="responsive-img z-depth-3 hoverable"
+          src="{{book.book_cover}}"
+      /></a>
+      <h5 class="blue-text darken-3 center-align truncate">
+        {{book.book_title}}
+      </h5>
+      <h6 class="blue-text darken-3 center-align">
+        Recommended By <br />{{book.inspire_person}}
+      </h6>
+    </div>
+    {% endfor %}
+  </div>
 </main>
 
 {% endblock %}

@@ -35,28 +35,29 @@
           <h4 class="blue-text darken-5 center collapsible-header">
             Comments<i class="material-icons">expand_more</i>
           </h4>
-          
-          {% for comments in subject.comments %}
-            {% for comment_author in subject.comment_author %}
+
           <h6 class="collapsible-body">
+            <!--{% for comment_author in subject.comment_author %}{% endfor %}-->
+
             <div class="row">
+              {% for comments in subject.comments %}
+
               <div class="col s9 left-align">
                 <p>{{comments}}</p>
               </div>
-            
+
               <div class="col s3">
-              
-                <p>Written by {{comment_author}}</p>
+                <!--<p>Written by {{comment_author}}</p>-->
                 <a
                   class="waves-effect waves-light btn pink lighten-4 btn-small col3 rad-but"
-                  href="{{url_for('delete_comment', subject_id=subject._id, comment=comments, author=comment_author)}}"
+                  href="{{url_for('delete_comment', subject_id=subject._id, comment=comments)}}"
                 ></a>
-               
+                <!--, author=comment_author-->
               </div>
+
+              {% endfor %}
             </div>
           </h6>
-            {% endfor %}
-          {% endfor %}
         </li>
       </ul>
 
@@ -68,12 +69,12 @@
           <!--Name Insert-->
           <div class="container">
             <div class="col12">
-              <input
+              <!--<input
                 id="comment_author"
                 name="comment_author"
                 type="text"
                 placeholder="Add Name"
-              />
+              />-->
             </div>
             <!--Comment Insert-->
             <br />
@@ -85,7 +86,7 @@
                 rows="10"
                 class="materialize-textarea"
               >
-Add Comment
+Leave a Comment
             </textarea
               >
             </div>

@@ -16,55 +16,53 @@
   </head>
 
   <body>
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper white z-depth-3">
-        <a
-          href="{{url_for('get_home')}}"
-          class="brand-logo right blue-text text-darken-2"
-          >Inspire</a
-        >
-        <a
-          href="{{url_for('get_home')}}"
-          data-target="mobile-demo"
-          class="sidenav-trigger blue-text text-darken-2"
-          ><i class="material-icons">menu</i></a
-        >
-        <ul class="left hide-on-med-and-down">
-          <li>
-            <a class="blue-text text-darken-2" href="{{url_for('get_home')}}"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a class="blue-text text-darken-2" href="{{url_for('get_people')}}"
-              >People</a
-            >
-          </li>
-          <li>
-            <a class="blue-text text-darken-2" href="{{url_for('get_books')}}"
-              >Books</a
-            >
-          </li>
-          <!--<li>
-            <a class="blue-text text-darken-2" href="{{url_for('get_search')}}"
-              >Search</a
-            >
-          </li>-->
-          <li>
-            <a class="blue-text text-darken-2" href="{{url_for('get_blog')}}"
-              >Blog</a
-            >
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper white z-depth-3">
+          <a
+            href="{{url_for('get_home')}}"
+            class="brand-logo right blue-text text-darken-2"
+            >Inspire</a
+          >
+          <a
+            href="{{url_for('get_home')}}"
+            data-target="mobile-demo"
+            class="sidenav-trigger blue-text text-darken-2"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="left hide-on-med-and-down">
+            <li>
+              <a class="blue-text text-darken-2" href="{{url_for('get_home')}}"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                class="blue-text text-darken-2"
+                href="{{url_for('get_people')}}"
+                >People</a
+              >
+            </li>
+            <li>
+              <a class="blue-text text-darken-2" href="{{url_for('get_books')}}"
+                >Books</a
+              >
+            </li>
+
+            <li>
+              <a class="blue-text text-darken-2" href="{{url_for('get_blog')}}"
+                >Blog</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
     <ul class="sidenav" id="mobile-demo">
       <li><a href="{{url_for('get_home')}}">Home</a></li>
       <li><a href="{{url_for('get_people')}}">People</a></li>
       <li><a href="{{url_for('get_books')}}">Books</a></li>
-      <!--<li><a href="{{url_for('get_search')}}">Search</a></li>-->
+
       <li><a href="{{url_for('get_blog')}}">Blog</a></li>
     </ul>
     {% block content %} {% endblock %}
@@ -80,9 +78,13 @@
                 class="blue-text text-darken-2"
                 href="{{url_for('get_submission')}}"
                 >Add to collection</a
-              ></p>
-              <h5 class="blue-text text-darken-2">Submit a Subject of interest</h5>
-              <p><a
+              >
+            </p>
+            <h5 class="blue-text text-darken-2">
+              Submit a Subject of interest
+            </h5>
+            <p>
+              <a
                 class="blue-text text-darken-2"
                 href="{{url_for('get_add_blog')}}"
                 >Add to Blog</a
@@ -129,28 +131,24 @@
           <a class="blue-text text-darken-4 right" href="#!">Jude Storey MS3</a>
         </div>
       </div>
-
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
+
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('.sidenav').sidenav();
-            $('.collapsible').collapsible();
-            $('select').formSelect();
-            $('.datepicker').datepicker({
-            selectMonths: true, // Creates a dropdown to control month
-            selectYears: 15, // Creates a dropdown of 15 years to control year,
-            today: 'Today',
-            clear: 'Clear',
-            close: 'Ok',
-            closeOnSelect: false // Close upon selecting a date,
-            });
+      $(document).ready(function () {
+        $(".sidenav").sidenav();
+        $(".collapsible").collapsible();
+        $("select").formSelect();
+        $(".datepicker").datepicker({
+          selectMonths: true, // Creates a dropdown to control month
+          selectYears: 15, // Creates a dropdown of 15 years to control year,
+          today: "Today",
+          clear: "Clear",
+          close: "Ok",
+          closeOnSelect: false, // Close upon selecting a date,
         });
-        
-     </script>
-  
-     
+      });
+    </script>
   </body>
 </html>
