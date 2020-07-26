@@ -1,9 +1,13 @@
 # Inspire Book Repo
 
-One or two paragraphs providing an overview of your project.
+Welcome to Inspire were you will find Books recommended by visionaries
 
-Essentially, this part is your sales pitch.
- 
+Inspire is a book repository where individuals can find and submit details on books that helped influence their heros, visionaries and people or renown.
+The aim of the site is to show case what type of storys and knowledge impacted those who are considered paragon's in their field.
+
+The application was created to show case the ability to use CRUD functionalities with MongoDB and Python to give users the ability to create new blog posts, edit and delete them. Allow other users to comment under them. The main application allows users to add to the database new books with person of influence that can be edited deleted and read by others.
+
+
 ## UX
  
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
@@ -15,9 +19,42 @@ This section is also where you would share links to any wireframes, mockups, dia
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
- 
+I created this website with 'ease of use' as the fore most idea in implementation. Each user is able to contribute their opinion in blogs & comments section. The main feature of the website are the people and book profiles and can be easily created edited and deleted by the user.
+
+###  User Stories
+
+-Owner Goals
+
+Generate interest in reading and build a strong database of books and people of influence.
+    -Side Goal with time is to create money e.g. Amazon Affiliate linking books and places to buy them.
+Generate interest in learning.
+    -Side Goal with having people post their 'Hero's' they can have Affiliate links to educational websites with courses in their heros field.
+Create a safe & fun place to discuss books and influencers with a blog.
+    - side goal with increase numbers to a blog is marketing.
+
+-User Goals
+
+Browse a variety of information on books and people that i am interested in learning about.
+
+Discuss books that have been recommended by people and interact with them.
+
+Add books that have influenced people that i admire.
+
+## Wireframes
+
+The wireframs for this project were drawn up on google drive/images
+
+## Data Architecture
+
+- Book_title
+- Categories
+- Category
+- Blog
+
 ### Existing Features
+
+The following section outlines implemented features and future features to be implemented
+
 - Feature 1 - allows users X to achieve Y, by having them fill out Z
 - ...
 
@@ -30,11 +67,27 @@ In addition, you may also use this section to discuss plans for additional featu
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+[HTML5](https://en.wikipedia.org/wiki/HTML5) was employed for markup text.
 
-- [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
+[CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) was used to style each of the pages on the website.
 
+[JavaScript](https://en.wikipedia.org/wiki/JavaScript) was added to improve the functionality of the website. Most Javascript on this site is required by Materialize.
+
+[Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)) Application, written in [Python]
+
+[Materialize](https://materializecss.com/about.html) was used for its design framework. The grid system is used throughout the website.
+
+[Jinja](https://en.wikipedia.org/wiki/Jinja_(template_engine)) A templating language used with python to retrieve data from the database to display on the website.
+
+[MongoDB](https://www.mongodb.com/company) The database used to organize data from the users.
+
+[Pymongo](https://www.w3schools.com/python/python_mongodb_getstarted.asp) The project uses PyMongo as the Python API for MongoDB. This API enables linking the data from the back-end database to the front-end app.
+
+[GitHub](https://en.wikipedia.org/wiki/GitHub) was used for version control.
+
+[Heroku](https://www.heroku.com/what) Used to deploy the final website
+
+https://inspire-book-repo.herokuapp.com/
 
 ## Testing
 
