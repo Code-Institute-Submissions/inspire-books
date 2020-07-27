@@ -14,14 +14,8 @@
         src="{{url_for('static', filename='stacked_books.jpg')}}"
       />
       <h4 class="blue-text darken-3 center-align">{{subject.reading_title}}</h4>
-      <a
-        class="waves-effect waves-light btn pink lighten-4 btn-small right rad-but"
-        href="{{url_for('delete_subject', subject_id=subject._id)}}"
-      ></a>
-      <a
-        class="waves-effect waves-light btn teal lighten-4 btn-small right rad-but"
-        href="{{url_for('edit_blog', subject_id=subject._id)}}"
-      ></a>
+    <i class="far fa-trash-alt fa-2x waves-effect waves-light pink-text lighten-4 right tooltipped" data-position="bottom" data-tooltip="Delete" href="{{url_for('delete_subject', subject_id=subject._id)}}"></i>
+    <i class="fas fa-pencil-alt fa-2x waves-effect waves-light blue-text lighten-4 right tooltipped" data-position="bottom" data-tooltip="Edit" href="{{url_for('edit_blog', subject_id=subject._id)}}"></i>
     </div>
 
     <div class="col l8 m8 s12 center">
@@ -48,10 +42,7 @@
 
               <div class="col s3">
                 <!--<p>Written by {{comment_author}}</p>-->
-                <a
-                  class="waves-effect waves-light btn pink lighten-4 btn-small col3 rad-but"
-                  href="{{url_for('delete_comment', subject_id=subject._id, comment=comments)}}"
-                ></a>
+                <i class="far fa-trash-alt fa-2x waves-effect waves-light pink-text lighten-4 col3 tooltipped" data-position="right" data-tooltip="Delete" href="{{url_for('delete_comment', subject_id=subject._id, comment=comments)}}"></i>
                 <!--, author=comment_author-->
               </div>
 
@@ -66,17 +57,12 @@
           action="{{url_for('insert_comment', subject_id=subject._id)}}"
           method="POST"
         >
-          <!--Name Insert-->
+          
           <div class="container">
             <div class="col12">
-              <!--<input
-                id="comment_author"
-                name="comment_author"
-                type="text"
-                placeholder="Add Name"
-              />-->
+              
             </div>
-            <!--Comment Insert-->
+            
             <br />
             <div class="col12">
               <textarea
@@ -85,6 +71,7 @@
                 cols="30"
                 rows="10"
                 class="materialize-textarea"
+                required
               >
 Leave a Comment
             </textarea

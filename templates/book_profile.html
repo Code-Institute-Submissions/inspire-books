@@ -8,6 +8,7 @@
     action="{{url_for('update_submission', book_title_id=book._id)}}"
     method="POST"
     class=""
+    
   >
     <div class="col12">
       <h5 class="blue-text text-darken-2">Book Title</h5>
@@ -18,13 +19,14 @@
         name="book_title"
         type="text"
         value="{{book.book_title}}"
+        required
       />
     </div>
     <div class="col12">
       <h5 class="blue-text text-darken-2">Author</h5>
     </div>
     <div class="col12">
-      <input id="author" name="author" type="text" value="{{book.author}}" />
+      <input id="author" name="author" type="text" value="{{book.author}}" required/>
     </div>
 
     <div class="col12">
@@ -35,7 +37,7 @@
         id="book_cover"
         name="book_cover"
         type="text"
-        value="{{book.book_cover}}"
+        value="{{book.book_cover}}" required
       />
     </div>
 
@@ -47,7 +49,7 @@
         id="book_link"
         name="book_link"
         type="url"
-        value="{{book.book_link}}"
+        value="{{book.book_link}}" required
       />
     </div>
 
@@ -80,7 +82,7 @@
         name="synopsis"
         cols="30"
         rows="10"
-        class="materialize-textarea"
+        class="materialize-textarea" required
       >
 {{book.synopsis}}
       </textarea>
@@ -96,7 +98,7 @@
         type="text"
         id="inspire_person"
         name="inspire_person"
-        value="{{book.inspire_person}}"
+        value="{{book.inspire_person}}" required
         class=""
       />
 
@@ -130,7 +132,7 @@
             name="born"
             type="text"
             class="datepicker"
-            value="{{book.born}}"
+            value="{{book.born}}" required
           />
         </div>
       </div>

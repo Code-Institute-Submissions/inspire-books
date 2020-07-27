@@ -2,8 +2,8 @@
 
 Welcome to Inspire were you will find Books recommended by visionaries
 
-Inspire is a book repository where individuals can find and submit details on books that helped influence their heros, visionaries and people or renown.
-The aim of the site is to show case what type of storys and knowledge impacted those who are considered paragon's in their field.
+Inspire is a book repository where individuals can find and submit details on books that helped influence their heros, visionaries and people of renown.
+The aim of the site is to show case what type of stories and knowledge impacted those who are considered paragon's in their field.
 
 The application was created to show case the ability to use CRUD functionalities with MongoDB and Python to give users the ability to create new blog posts, edit and delete them. Allow other users to comment under them. The main application allows users to add to the database new books with person of influence that can be edited deleted and read by others.
 
@@ -23,24 +23,24 @@ I created this website with 'ease of use' as the fore most idea in implementatio
 
 ###  User Stories
 
--Owner Goals
+- Owner Goals
 
 Generate interest in reading and build a strong database of books and people of influence.
-    -Side Goal with time is to create money e.g. Amazon Affiliate linking books and places to buy them.
+    - Side Goal with time is to create money e.g. Amazon Affiliate linking books and places to buy them.
 
 Generate interest in learning.
-    -Side Goal with having people post their 'Hero's' they can have Affiliate links to educational websites with courses in their heros field.
+    - Side Goal with having people post their 'Hero's' they can have Affiliate links to educational websites with courses in their heros field.
 
 Create a safe & fun place to discuss books and influencers with a blog.
     - side goal with increase numbers to a blog is marketing.
 
--User Goals
+- User Goals
 
-Browse a variety of information on books and people that i am interested in learning about.
+Browse a variety of information on books and people that I am interested in learning about.
 
 Discuss books that have been recommended by people and interact with them.
 
-Add books that have influenced people that i admire.
+Add books that have influenced people that I admire.
 
 ## Wireframes
 
