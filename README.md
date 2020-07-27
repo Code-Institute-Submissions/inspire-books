@@ -27,8 +27,10 @@ I created this website with 'ease of use' as the fore most idea in implementatio
 
 Generate interest in reading and build a strong database of books and people of influence.
     -Side Goal with time is to create money e.g. Amazon Affiliate linking books and places to buy them.
+
 Generate interest in learning.
     -Side Goal with having people post their 'Hero's' they can have Affiliate links to educational websites with courses in their heros field.
+
 Create a safe & fun place to discuss books and influencers with a blog.
     - side goal with increase numbers to a blog is marketing.
 
