@@ -125,7 +125,9 @@ The Following features have all been implemented to help achieve the projects go
 Following code validators where used
 
 [HTML](https://validator.w3.org/#validate_by_input)
+
 [CSS](https://jigsaw.w3.org/css-validator/#validate_by_input)
+
 [JS](https://jshint.com/)
 
 Browser testing
