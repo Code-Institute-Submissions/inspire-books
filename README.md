@@ -39,11 +39,15 @@ Add books that have influenced people that I admire.
 
 The wireframs for this project were drawn up on google drive/images
 
-[Front Page](https://github.com/Wonka86/inspire-books/blob/master/static/wireframes/Inspire%20Front%20Page.jpg)
-[Book Page](https://github.com/Wonka86/inspire-books/blob/c2cea96c630364fa41376b7a8d872f73b1b8499d/static/wireframes/Books%20Page.jpg)
-[People page](https://github.com/Wonka86/inspire-books/blob/c2cea96c630364fa41376b7a8d872f73b1b8499d/static/wireframes/People%20Page.jpg)
-[Submission](https://github.com/Wonka86/inspire-books/blob/c2cea96c630364fa41376b7a8d872f73b1b8499d/static/wireframes/Submission.jpg)
-[Blog](https://github.com/Wonka86/inspire-books/blob/c2cea96c630364fa41376b7a8d872f73b1b8499d/static/wireframes/Blog.jpg)
+- [Front Page](https://github.com/Wonka86/inspire-books/blob/master/static/wireframes/Inspire%20Front%20Page.jpg)
+
+- [Book Page](https://github.com/Wonka86/inspire-books/blob/c2cea96c630364fa41376b7a8d872f73b1b8499d/static/wireframes/Books%20Page.jpg)
+
+- [People page](https://github.com/Wonka86/inspire-books/blob/c2cea96c630364fa41376b7a8d872f73b1b8499d/static/wireframes/People%20Page.jpg)
+
+- [Submission](https://github.com/Wonka86/inspire-books/blob/c2cea96c630364fa41376b7a8d872f73b1b8499d/static/wireframes/Submission.jpg)
+
+- [Blog](https://github.com/Wonka86/inspire-books/blob/c2cea96c630364fa41376b7a8d872f73b1b8499d/static/wireframes/Blog.jpg)
 
 
 ## Data Architecture
@@ -51,24 +55,44 @@ Data architecture had to be thought through before commencement. CI Tutors helpe
 
 
 [Inspire Book Repo](https://github.com/Wonka86/inspire-books/blob/8f025ed314b364df76f0af6b64a9b057aeaffcb6/static/data-layout/book%20repo.png)
+
 - [Book_title](https://github.com/Wonka86/inspire-books/blob/8f025ed314b364df76f0af6b64a9b057aeaffcb6/static/data-layout/books&people.png)
+
 - [Categories](https://github.com/Wonka86/inspire-books/blob/8f025ed314b364df76f0af6b64a9b057aeaffcb6/static/data-layout/book%20categories.png)
+
 - [Category](https://github.com/Wonka86/inspire-books/blob/8f025ed314b364df76f0af6b64a9b057aeaffcb6/static/data-layout/work%20categories.png)
+
 - [Blog](https://github.com/Wonka86/inspire-books/blob/8f025ed314b364df76f0af6b64a9b057aeaffcb6/static/data-layout/blog.png)
 
 ### Existing Features
 
-The following section outlines implemented features and future features to be implemented
+The Following features have all been implemented to help achieve the projects goals of showcasing CRUD functionalities.
 
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
+- Navbar - All pages contain navigation for website and mobile allowing access to CRUD finctions. Web page Name is located on the left hand side and doubles as a retrun to home button.
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+- Footer - Footer contains the ability to add submissions to the database for Books and People. It also contains the ability to add to The Blog posts.
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+- Homepage - Highlights the featured people and books that the user will come across before continuing to acces the pages.
+
+- People - This is where the user will find the people who are submitted along with the book submissions.
+
+- Books - The user will find all the information on the books submitted such as title synposis and author. The ability to edit and delete are alson found here.
+
+- Categories - Are found in both the books section and people section. The help with providing further information and will hel in future features.
+
+- Blog - The user is able to interact with others here, add comments and delete them.
 
 ### Features Left to Implement
-- Another feature idea
+
+- Search Page - In the fuuture as the database grows i would like to add the ability to search for people and books.
+
+- Select Category - To help find books and people in certain subjects i would like to be able to select categories and have it show only the one i select.
+
+- Edit Comments - Currently i only have the ability to delete comments as i dont expect long conversations just yet. As the site grows this may have to be relooked at.
+
+- Login in - Currently not implemented but as time goes on i expect this to be a feature that may have to be implemented. I dont what to do this yet as i want to encourage people to use with having to give away much information. As time goes on and the site grows this will be needed to control aspects of the site.
+
+- Increase Business use with affiliate links and marketing - new areas on the site will need to be looked at to help with this implementation.
 
 ## Technologies Used
 
@@ -92,27 +116,42 @@ In addition, you may also use this section to discuss plans for additional featu
 
 [Heroku](https://www.heroku.com/what) Used to deploy the final website
 
+[Fontawesome](https://fontawesome.com/) Used for icons in blog
+
 https://inspire-book-repo.herokuapp.com/
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+Following code validators where used
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+[HTML](https://validator.w3.org/#validate_by_input)
+[CSS](https://jigsaw.w3.org/css-validator/#validate_by_input)
+[JS](https://jshint.com/)
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+Browser testing
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+This website was tested on multiple devices with varying screen sizes and in multiple browsers. All devices and web browsers passed testing.
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+Web browsers
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+- Google Chrome
+- Firefox
+- Edge
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+
+Devices
+
+- iPad
+- iPhone X
+- Wide Screen PC
+- 13" Laptop
+
+This was tested manually over the several devices.
+
+
+Manual Testing
+
+- 
 
 ## Deployment
 
