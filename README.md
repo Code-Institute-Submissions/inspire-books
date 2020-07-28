@@ -10,8 +10,6 @@ The application was created to show case the ability to use CRUD functionalities
 
 ## UX
  
-## Features
-
 I created this website with 'ease of use' as the fore most idea in implementation. Each user is able to contribute their opinion in blogs & comments section. The main feature of the website are the people and book profiles and can be easily created edited and deleted by the user.
 
 ###  User Stories
@@ -63,6 +61,8 @@ Data architecture had to be thought through before commencement. CI Tutors helpe
 - [Category](https://github.com/Wonka86/inspire-books/blob/8f025ed314b364df76f0af6b64a9b057aeaffcb6/static/data-layout/work%20categories.png)
 
 - [Blog](https://github.com/Wonka86/inspire-books/blob/8f025ed314b364df76f0af6b64a9b057aeaffcb6/static/data-layout/blog.png)
+
+## Features
 
 ### Existing Features
 
@@ -146,33 +146,73 @@ Devices
 - Wide Screen PC
 - 13" Laptop
 
-This was tested manually over the several devices.
+This was tested manually over the several devices. Upon using the mobile platfrom is when i noticed that the mobile navigation was not working. This was fixed with the correct JQuery from Materialize.
 
 
 Manual Testing
 
-- 
+- When Manually testing i started off by going through user stories
+
+- I started withthe site user. I am drawn in by front page to see what others have submitted. I can click pictures of people and see what they have recommended. From there i can go to the book section
+and have a look at the book i am interested in and links to buy. I am interested in leaving my on inspiration and decide to submit a person and book through the nav bar. I have made a mistake in the synposis i can edit the submission
+and in doing so i have also changed my mind and can easily delete the submission.
+
+Initial bug fix was updating of Jquery in the edit section so that the date of birth would show calander.
+
+- I would like to discuss an entery to the website and go to the blog and find an interesting read along started. I want to leave a comment. Easily done with the add comment. If i change my mind i see the delete button as a trash bun and on hover the word delete.
+
+Bug that showed up here that resonated throught the entire web site was when i accidently hit the add comment button without writing anything. This i found entered a blank comment. This got me thinking and i then realised that this was the case for all
+submissions. This was easily fixed with a required field in all form inputs.
+
+- I moved on as site Owner
+
+I started with the front page. I am happy that the page takes the first six data enteries from books and people and shows them in a responsive format. At a later date i would like to keep six showing but create a carousel and siplay a few more images as site grows.
+I move on to people and happy with the display of the people there. Initally i have a delete button here but unhappy with the ability of deleteing the person and leaving the book in next page so i have the button removed. Moving on to books i can
+edit and delete submissions by others as i make sure content is correct and fit for website purpose. I moved on to the blog and was unhappy with how the buttons stood out so much and ammended them to icons. Upon fixing i was able to edit and delete blogs. In the add blog section i was able to add a new subject and title.
+
+
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+This app is currently deployed on Heroku. The code deployed is stored on the master branch of this project here on GitHub. Heroku requires the following steps to deploy this project.
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+1. Once signed in, click the "new" button on the dashboard to create a new application.
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
+2. Name the App and choose the region you are currently in.
+
+3. Create a requirements.txt file to allow Heroku to install the dependencies required by the application.
+
+pip3 freeze --local > requirements.txt
+
+4. Create a procfile to tell Heroku what type of application will be deployed.
+
+echo web: python run.py > Procfile
+
+5. On the deployment page of the Heroku project, choose Heroku GIT for deploying.
+
+6. In the CLI of your environment, input the following code:
+
+$ heroku login
+$ heroku git:remote -a <inspire-books-repo>
+$ git push heroku master
+
+7. In Heroku settings, chose "Real Config Vars" to set the proper environmental variables
+IP:    0.0.0.0
+Port:    5000
+MONGO_URI mongodb+srv://<username>:<password>@<cluster_name>.mongodb.net/<database>?retryWrites=true&w=majority
+SECRET_KEY:   <your_value>
+
+8. Click the "Open App" button to view the final deployed app.
 
 
 ## Credits
 
+### Acknowledgements
+I would like to thank CI tutors for helping me work out the $pull $push for adding and deleteing arrays and my mentor Victor for pushing me to find the bugs and with UI layout and the issues they could create.
+
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- The filler text for the blog was copied from the [reddit fantasy](https://www.reddit.com/r/Fantasy/)
 
 ### Media
-- The photos used in this site were obtained from ...
-
-### Acknowledgements
-
-- I received inspiration for this project from X
+- images for the books came from [Amazon](https://www.amazon.co.uk/)
+- images for people came from [google images](https://www.google.co.uk/imghp?hl=en&tab=wi&ogbl)
