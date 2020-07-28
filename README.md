@@ -176,7 +176,7 @@ edit and delete submissions by others as i make sure content is correct and fit 
 
 ## Deployment
 
-This app is currently deployed on Heroku. The code deployed is stored on the master branch of this project here on GitHub. Heroku requires the following steps to deploy this project. https://inspire-book-repo.herokuapp.com/
+This app is currently deployed on Heroku. The code deployed is stored on the master branch of this project here on GitHub. Heroku requires the following steps to deploy this project. 
 
 1. Once signed in, click the "new" button on the dashboard to create a new application.
 
@@ -206,6 +206,7 @@ SECRET_KEY:   <your_value>
 
 8. Click the "Open App" button to view the final deployed app.
 
+https://inspire-book-repo.herokuapp.com/
 
 ## Credits
 
