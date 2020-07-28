@@ -39,7 +39,7 @@ Add books that have influenced people that I admire.
 
 The wireframs for this project were drawn up on google drive/images
 
-[Front Page](static/wireframes/Inspire Front Page.jpg)
+[Front Page](static/wireframes/Inspire_Front_Page.jpg)
 
 
 
