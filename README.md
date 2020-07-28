@@ -39,17 +39,22 @@ Add books that have influenced people that I admire.
 
 The wireframs for this project were drawn up on google drive/images
 
-[Front Page](static/wireframes/Inspire_Front_Page.jpg)
-
-
+[Front Page](https://github.com/Wonka86/inspire-books/blob/master/static/wireframes/Inspire%20Front%20Page.jpg)
+[Book Page](https://github.com/Wonka86/inspire-books/blob/c2cea96c630364fa41376b7a8d872f73b1b8499d/static/wireframes/Books%20Page.jpg)
+[People page](https://github.com/Wonka86/inspire-books/blob/c2cea96c630364fa41376b7a8d872f73b1b8499d/static/wireframes/People%20Page.jpg)
+[Submission](https://github.com/Wonka86/inspire-books/blob/c2cea96c630364fa41376b7a8d872f73b1b8499d/static/wireframes/Submission.jpg)
+[Blog](https://github.com/Wonka86/inspire-books/blob/c2cea96c630364fa41376b7a8d872f73b1b8499d/static/wireframes/Blog.jpg)
 
 
 ## Data Architecture
+Data architecture had to be thought through before commencement. CI Tutors helped with the layout of blog data.
 
-- Book_title
-- Categories
-- Category
-- Blog
+
+[Inspire Book Repo](https://github.com/Wonka86/inspire-books/blob/8f025ed314b364df76f0af6b64a9b057aeaffcb6/static/data-layout/book%20repo.png)
+- [Book_title](https://github.com/Wonka86/inspire-books/blob/8f025ed314b364df76f0af6b64a9b057aeaffcb6/static/data-layout/books&people.png)
+- [Categories](https://github.com/Wonka86/inspire-books/blob/8f025ed314b364df76f0af6b64a9b057aeaffcb6/static/data-layout/book%20categories.png)
+- [Category](https://github.com/Wonka86/inspire-books/blob/8f025ed314b364df76f0af6b64a9b057aeaffcb6/static/data-layout/work%20categories.png)
+- [Blog](https://github.com/Wonka86/inspire-books/blob/8f025ed314b364df76f0af6b64a9b057aeaffcb6/static/data-layout/blog.png)
 
 ### Existing Features
 
