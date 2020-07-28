@@ -7,6 +7,7 @@ The aim of the site is to show case what type of stories and knowledge impacted 
 
 The application was created to show case the ability to use CRUD functionalities with MongoDB and Python to give users the ability to create new blog posts, edit and delete them. Allow other users to comment under them. The main application allows users to add to the database new books with person of influence that can be edited deleted and read by others.
 
+Website can be found at https://inspire-book-repo.herokuapp.com/
 
 ## UX
  
@@ -118,7 +119,6 @@ The Following features have all been implemented to help achieve the projects go
 
 [Fontawesome](https://fontawesome.com/) Used for icons in blog
 
-https://inspire-book-repo.herokuapp.com/
 
 ## Testing
 
@@ -174,7 +174,7 @@ edit and delete submissions by others as i make sure content is correct and fit 
 
 ## Deployment
 
-This app is currently deployed on Heroku. The code deployed is stored on the master branch of this project here on GitHub. Heroku requires the following steps to deploy this project.
+This app is currently deployed on Heroku. The code deployed is stored on the master branch of this project here on GitHub. Heroku requires the following steps to deploy this project. https://inspire-book-repo.herokuapp.com/
 
 1. Once signed in, click the "new" button on the dashboard to create a new application.
 
