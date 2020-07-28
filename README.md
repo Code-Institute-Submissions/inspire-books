@@ -10,13 +10,6 @@ The application was created to show case the ability to use CRUD functionalities
 
 ## UX
  
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
-
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
-
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
-
 ## Features
 
 I created this website with 'ease of use' as the fore most idea in implementation. Each user is able to contribute their opinion in blogs & comments section. The main feature of the website are the people and book profiles and can be easily created edited and deleted by the user.
@@ -25,13 +18,13 @@ I created this website with 'ease of use' as the fore most idea in implementatio
 
 - Owner Goals
 
-Generate interest in reading and build a strong database of books and people of influence.
+Generate interest in reading and build a strong database of books and people of influence.  
     - Side Goal with time is to create money e.g. Amazon Affiliate linking books and places to buy them.
 
 Generate interest in learning.
-    - Side Goal with having people post their 'Hero's' they can have Affiliate links to educational websites with courses in their heros field.
+    - Side Goal with having people post their 'Hero's' they can have Affiliate links to educational websites with courses in their heros field. 
 
-Create a safe & fun place to discuss books and influencers with a blog.
+Create a safe & fun place to discuss books and influencers with a blog. 
     - side goal with increase numbers to a blog is marketing.
 
 - User Goals
@@ -45,6 +38,11 @@ Add books that have influenced people that I admire.
 ## Wireframes
 
 The wireframs for this project were drawn up on google drive/images
+
+[Front Page](static/wireframes/Inspire Front Page.jpg)
+
+
+
 
 ## Data Architecture
 
